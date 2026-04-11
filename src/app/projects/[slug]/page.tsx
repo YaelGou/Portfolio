@@ -4,6 +4,7 @@ import Link from "next/link";
 import { projects, getProjectBySlug } from "@/data/projects";
 import { SkillPill } from "@/components/SkillPill";
 import { Footer } from "@/components/Footer";
+import { ProjectThumbnail } from "@/components/ProjectThumbnail";
 
 export function generateStaticParams() {
   return projects.map((p) => ({ slug: p.slug }));
@@ -28,10 +29,10 @@ export async function generateMetadata({
   };
 }
 
-const statusLabel: Record<string, string> = {
-  active: "Active",
-  "early-stage": "In Development",
-  utility: "Active",
+const statusConfig: Record<string, { label: string; classes: string }> = {
+  active: { label: "Active", classes: "bg-stone-100 text-stone-500" },
+  "early-stage": { label: "In Progress", classes: "bg-amber-50 text-amber-700 border border-amber-200" },
+  utility: { label: "Active", classes: "bg-stone-100 text-stone-500" },
 };
 
 export default async function ProjectPage({
@@ -57,9 +58,9 @@ export default async function ProjectPage({
       <header className="mb-10">
         <div className="flex items-center gap-3 mb-4">
           <span
-            className={`text-xs font-semibold px-2.5 py-1 rounded-full ${project.accent.badge}`}
+            className={`text-xs font-medium px-2.5 py-1 rounded-full ${statusConfig[project.status].classes}`}
           >
-            {statusLabel[project.status]}
+            {statusConfig[project.status].label}
           </span>
         </div>
         <h1 className="font-serif text-4xl md:text-5xl text-stone-800 leading-tight mb-4">
@@ -70,15 +71,11 @@ export default async function ProjectPage({
         </p>
       </header>
 
-      {/* Hero placeholder */}
+      {/* Hero thumbnail */}
       <div
-        className={`w-full h-52 rounded-2xl mb-12 flex items-center justify-center ${project.accent.cardBg} border ${project.accent.border}`}
+        className={`w-full h-56 rounded-xl mb-12 overflow-hidden ${project.accent.cardBg} border border-stone-200`}
       >
-        <span
-          className={`font-serif text-7xl font-bold ${project.accent.text} opacity-20 select-none`}
-        >
-          {project.name[0]}
-        </span>
+        <ProjectThumbnail slug={project.slug} className="w-full h-full" />
       </div>
 
       {/* The Why */}
