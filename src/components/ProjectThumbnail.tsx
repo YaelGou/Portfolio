@@ -220,6 +220,167 @@ function CyclicLifeThumb({ className }: ThumbProps) {
   );
 }
 
+function FriendCrmThumb({ className }: ThumbProps) {
+  return (
+    <svg viewBox="0 0 280 140" fill="none" xmlns="http://www.w3.org/2000/svg" className={className}>
+      {/* Contact cards */}
+      <rect x="28" y="20" width="100" height="64" rx="6" fill="white" stroke="#64748B" strokeWidth="1.2" opacity="0.5"/>
+      <circle cx="56" cy="44" r="12" fill="#64748B" opacity="0.12"/>
+      <rect x="76" y="38" width="40" height="2.5" rx="1.25" fill="#1E293B" opacity="0.45"/>
+      <rect x="76" y="47" width="28" height="2" rx="1" fill="#64748B" opacity="0.3"/>
+      <rect x="32" y="68" width="92" height="2" rx="1" fill="#64748B" opacity="0.18"/>
+      <rect x="32" y="74" width="72" height="2" rx="1" fill="#64748B" opacity="0.18"/>
+      {/* Overdue badge */}
+      <rect x="92" y="18" width="38" height="14" rx="7" fill="#EF4444" opacity="0.15"/>
+      <rect x="100" y="23" width="22" height="2" rx="1" fill="#DC2626" opacity="0.5"/>
+      {/* Second card */}
+      <rect x="88" y="30" width="100" height="64" rx="6" fill="white" stroke="#64748B" strokeWidth="1.2" opacity="0.35"/>
+      <circle cx="116" cy="54" r="12" fill="#64748B" opacity="0.1"/>
+      <rect x="136" y="48" width="40" height="2.5" rx="1.25" fill="#1E293B" opacity="0.38"/>
+      <rect x="136" y="57" width="28" height="2" rx="1" fill="#64748B" opacity="0.25"/>
+      {/* Message draft area */}
+      <rect x="152" y="20" width="106" height="100" rx="6" fill="white" stroke="#64748B" strokeWidth="1.2" opacity="0.45"/>
+      <rect x="160" y="30" width="72" height="2.5" rx="1.25" fill="#1E293B" opacity="0.4"/>
+      <rect x="160" y="40" width="88" height="2" rx="1" fill="#64748B" opacity="0.25"/>
+      <rect x="160" y="48" width="82" height="2" rx="1" fill="#64748B" opacity="0.25"/>
+      <rect x="160" y="56" width="76" height="2" rx="1" fill="#64748B" opacity="0.25"/>
+      <rect x="160" y="64" width="88" height="2" rx="1" fill="#64748B" opacity="0.25"/>
+      <rect x="160" y="72" width="60" height="2" rx="1" fill="#64748B" opacity="0.25"/>
+      {/* AI sparkle */}
+      <path d="M234 88 L236 94 L242 96 L236 98 L234 104 L232 98 L226 96 L232 94 Z" fill="#64748B" opacity="0.4"/>
+    </svg>
+  );
+}
+
+function VsdxProcessorThumb({ className }: ThumbProps) {
+  return (
+    <svg viewBox="0 0 280 140" fill="none" xmlns="http://www.w3.org/2000/svg" className={className}>
+      {/* Source image box */}
+      <rect x="16" y="30" width="72" height="80" rx="5" fill="#EEF2FF" stroke="#4338CA" strokeWidth="1.2" opacity="0.7"/>
+      <rect x="24" y="40" width="56" height="32" rx="3" fill="#4338CA" opacity="0.08"/>
+      {/* Rough shapes inside (image) */}
+      <rect x="28" y="44" width="20" height="14" rx="2" stroke="#4338CA" strokeWidth="1" fill="none" opacity="0.4"/>
+      <line x1="48" y1="50" x2="66" y2="50" stroke="#4338CA" strokeWidth="1" opacity="0.3"/>
+      <rect x="54" y="44" width="20" height="14" rx="2" stroke="#4338CA" strokeWidth="1" fill="none" opacity="0.4"/>
+      <rect x="24" y="82" width="56" height="2" rx="1" fill="#4338CA" opacity="0.2"/>
+      <rect x="24" y="88" width="40" height="2" rx="1" fill="#4338CA" opacity="0.2"/>
+      {/* Arrow + AI */}
+      <path d="M96 70 L118 70" stroke="#4338CA" strokeWidth="1.5" strokeLinecap="round"/>
+      <path d="M114 66 L118 70 L114 74" stroke="#4338CA" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+      <rect x="100" y="58" width="16" height="10" rx="3" fill="#EEF2FF" stroke="#4338CA" strokeWidth="1" opacity="0.7"/>
+      <rect x="104" y="61.5" width="8" height="2" rx="1" fill="#4338CA" opacity="0.5"/>
+      {/* VSDX output box */}
+      <rect x="124" y="20" width="80" height="100" rx="5" fill="white" stroke="#4338CA" strokeWidth="1.5" opacity="0.8"/>
+      <rect x="132" y="32" width="24" height="16" rx="3" fill="#EEF2FF" stroke="#4338CA" strokeWidth="1" opacity="0.7"/>
+      <rect x="164" y="32" width="28" height="16" rx="3" fill="#EEF2FF" stroke="#4338CA" strokeWidth="1" opacity="0.7"/>
+      <line x1="156" y1="40" x2="164" y2="40" stroke="#4338CA" strokeWidth="1.5" strokeLinecap="round"/>
+      <rect x="138" y="60" width="52" height="16" rx="3" fill="#EEF2FF" stroke="#4338CA" strokeWidth="1" opacity="0.7"/>
+      <rect x="144" y="87" width="64" height="8" rx="2" fill="#4338CA" opacity="0.06"/>
+      <rect x="144" y="100" width="52" height="2" rx="1" fill="#4338CA" opacity="0.2"/>
+      {/* Language arrows */}
+      <path d="M212 60 L248 45" stroke="#4338CA" strokeWidth="1" strokeDasharray="3 2" opacity="0.4"/>
+      <path d="M212 70 L248 70" stroke="#4338CA" strokeWidth="1" strokeDasharray="3 2" opacity="0.4"/>
+      <path d="M212 80 L248 95" stroke="#4338CA" strokeWidth="1" strokeDasharray="3 2" opacity="0.4"/>
+      <rect x="248" y="38" width="26" height="12" rx="3" fill="#EEF2FF" stroke="#4338CA" strokeWidth="0.8" opacity="0.6"/>
+      <rect x="248" y="64" width="26" height="12" rx="3" fill="#EEF2FF" stroke="#4338CA" strokeWidth="0.8" opacity="0.6"/>
+      <rect x="248" y="90" width="26" height="12" rx="3" fill="#EEF2FF" stroke="#4338CA" strokeWidth="0.8" opacity="0.6"/>
+    </svg>
+  );
+}
+
+function SlackKbBotThumb({ className }: ThumbProps) {
+  return (
+    <svg viewBox="0 0 280 140" fill="none" xmlns="http://www.w3.org/2000/svg" className={className}>
+      {/* Slack sidebar */}
+      <rect x="16" y="16" width="58" height="108" rx="5" fill="#0369A1" opacity="0.08" stroke="#0369A1" strokeWidth="1"/>
+      <rect x="24" y="28" width="42" height="6" rx="3" fill="#0369A1" opacity="0.3"/>
+      <rect x="24" y="40" width="34" height="4" rx="2" fill="#0369A1" opacity="0.2"/>
+      <rect x="24" y="50" width="38" height="4" rx="2" fill="#0369A1" opacity="0.15"/>
+      <rect x="24" y="60" width="30" height="4" rx="2" fill="#0369A1" opacity="0.15"/>
+      <rect x="24" y="72" width="42" height="6" rx="3" fill="#0369A1" opacity="0.25"/>
+      <rect x="24" y="84" width="36" height="4" rx="2" fill="#0369A1" opacity="0.18"/>
+      {/* Main chat area */}
+      <rect x="80" y="16" width="184" height="108" rx="5" fill="white" stroke="#0EA5E9" strokeWidth="1" opacity="0.4"/>
+      {/* Question message */}
+      <rect x="88" y="26" width="130" height="24" rx="5" fill="#F0F9FF" stroke="#0EA5E9" strokeWidth="0.8" opacity="0.7"/>
+      <rect x="96" y="31" width="80" height="2.5" rx="1.25" fill="#0C4A6E" opacity="0.45"/>
+      <rect x="96" y="38" width="100" height="2" rx="1" fill="#0C4A6E" opacity="0.25"/>
+      {/* Bot avatar + answer */}
+      <circle cx="97" cy="66" r="7" fill="#0EA5E9" opacity="0.2"/>
+      <rect x="104" y="22" width="4" height="4" rx="2" fill="#0EA5E9" opacity="0.5"/>
+      <rect x="112" y="57" width="148" height="48" rx="5" fill="#F0F9FF" stroke="#0EA5E9" strokeWidth="1" opacity="0.6"/>
+      <rect x="120" y="65" width="120" height="2.5" rx="1.25" fill="#0C4A6E" opacity="0.4"/>
+      <rect x="120" y="73" width="130" height="2" rx="1" fill="#0C4A6E" opacity="0.25"/>
+      <rect x="120" y="81" width="110" height="2" rx="1" fill="#0C4A6E" opacity="0.25"/>
+      <rect x="120" y="89" width="90" height="2" rx="1" fill="#0C4A6E" opacity="0.25"/>
+      {/* Vector search indicator */}
+      <circle cx="178" cy="30" r="8" stroke="#0EA5E9" strokeWidth="1.5" fill="none" opacity="0.5"/>
+      <line x1="184" y1="36" x2="192" y2="44" stroke="#0EA5E9" strokeWidth="1.5" strokeLinecap="round" opacity="0.5"/>
+    </svg>
+  );
+}
+
+function TodoistAiThumb({ className }: ThumbProps) {
+  return (
+    <svg viewBox="0 0 280 140" fill="none" xmlns="http://www.w3.org/2000/svg" className={className}>
+      {/* CLI terminal */}
+      <rect x="24" y="16" width="232" height="108" rx="6" fill="#1C0303" opacity="0.04" stroke="#B91C1C" strokeWidth="1.2"/>
+      <rect x="24" y="16" width="232" height="16" rx="6" fill="#B91C1C" opacity="0.08"/>
+      <circle cx="36" cy="24" r="3" fill="#B91C1C" opacity="0.3"/>
+      <circle cx="48" cy="24" r="3" fill="#B91C1C" opacity="0.2"/>
+      <circle cx="60" cy="24" r="3" fill="#B91C1C" opacity="0.15"/>
+      {/* Input line */}
+      <rect x="32" y="40" width="6" height="12" rx="1" fill="#B91C1C" opacity="0.5"/>
+      <rect x="42" y="44" width="160" height="2.5" rx="1.25" fill="#B91C1C" opacity="0.55"/>
+      {/* Task output */}
+      <rect x="32" y="62" width="8" height="8" rx="2" stroke="#B91C1C" strokeWidth="1.2" fill="none" opacity="0.5"/>
+      <rect x="46" y="64" width="110" height="2.5" rx="1.25" fill="#450A0A" opacity="0.4"/>
+      <rect x="46" y="70" width="60" height="2" rx="1" fill="#450A0A" opacity="0.2"/>
+      <rect x="32" y="80" width="8" height="8" rx="2" fill="#B91C1C" opacity="0.7"/>
+      <path d="M33 84 L36 87 L41 82" stroke="white" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round"/>
+      <rect x="46" y="82" width="90" height="2.5" rx="1.25" fill="#450A0A" opacity="0.35"/>
+      <rect x="32" y="98" width="8" height="8" rx="2" stroke="#B91C1C" strokeWidth="1.2" fill="none" opacity="0.5"/>
+      <rect x="46" y="100" width="130" height="2.5" rx="1.25" fill="#450A0A" opacity="0.4"/>
+      {/* AI sparkle */}
+      <path d="M218 50 L220 56 L226 58 L220 60 L218 66 L216 60 L210 58 L216 56 Z" fill="#B91C1C" opacity="0.35"/>
+      {/* Priority badge */}
+      <rect x="160" y="62" width="24" height="8" rx="4" fill="#B91C1C" opacity="0.12"/>
+      <rect x="164" y="65" width="16" height="2" rx="1" fill="#B91C1C" opacity="0.45"/>
+    </svg>
+  );
+}
+
+function AiChatAppThumb({ className }: ThumbProps) {
+  return (
+    <svg viewBox="0 0 280 140" fill="none" xmlns="http://www.w3.org/2000/svg" className={className}>
+      {/* App chrome */}
+      <rect x="24" y="12" width="232" height="116" rx="8" fill="white" stroke="#65A30D" strokeWidth="1.2" opacity="0.5"/>
+      {/* Header */}
+      <rect x="24" y="12" width="232" height="24" rx="8" fill="#65A30D" opacity="0.08"/>
+      <rect x="36" y="20" width="60" height="2.5" rx="1.25" fill="#365314" opacity="0.45"/>
+      <circle cx="236" cy="24" r="5" fill="#65A30D" opacity="0.2"/>
+      {/* User message */}
+      <rect x="120" y="46" width="124" height="20" rx="10" fill="#65A30D" opacity="0.12" stroke="#65A30D" strokeWidth="1"/>
+      <rect x="130" y="52" width="90" height="2.5" rx="1.25" fill="#365314" opacity="0.45"/>
+      <rect x="130" y="59" width="60" height="2" rx="1" fill="#365314" opacity="0.28"/>
+      {/* AI response streaming */}
+      <rect x="36" y="76" width="148" height="36" rx="8" fill="#F7FEE7" stroke="#65A30D" strokeWidth="1"/>
+      <rect x="46" y="84" width="128" height="2.5" rx="1.25" fill="#365314" opacity="0.4"/>
+      <rect x="46" y="91" width="110" height="2" rx="1" fill="#365314" opacity="0.28"/>
+      <rect x="46" y="98" width="92" height="2" rx="1" fill="#365314" opacity="0.28"/>
+      {/* Streaming cursor */}
+      <rect x="140" y="98" width="2" height="10" rx="1" fill="#65A30D" opacity="0.6"/>
+      {/* Input box */}
+      <rect x="36" y="118" width="196" height="0" rx="6"/>
+      <rect x="36" y="116" width="184" height="6" rx="3" fill="#65A30D" opacity="0.06" stroke="#65A30D" strokeWidth="0.8"/>
+      {/* Dots for streaming animation hint */}
+      <circle cx="194" cy="93" r="2.5" fill="#65A30D" opacity="0.5"/>
+      <circle cx="203" cy="93" r="2.5" fill="#65A30D" opacity="0.3"/>
+      <circle cx="212" cy="93" r="2.5" fill="#65A30D" opacity="0.15"/>
+    </svg>
+  );
+}
+
 // Placeholder for projects not yet added
 function DefaultThumb({ className }: ThumbProps) {
   return (
@@ -240,6 +401,11 @@ const thumbnails: Record<string, (props: ThumbProps) => React.ReactElement> = {
   "mv-app": MvAppThumb,
   journaling: JournalingThumb,
   "cyclic-life": CyclicLifeThumb,
+  "friend-crm": FriendCrmThumb,
+  "vsdx-processor": VsdxProcessorThumb,
+  "slack-kb-bot": SlackKbBotThumb,
+  "todoist-ai": TodoistAiThumb,
+  "ai-chat-app": AiChatAppThumb,
 };
 
 interface ProjectThumbnailProps {

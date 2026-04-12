@@ -314,6 +314,221 @@ Privacy comes first by design. All data lives on-device in SQLite by default. No
     progress: "In development. Architecture and data model are complete. Building out the core tracking UI screens; first release planned for personal use.",
     cardSkills: ["Expo", "React Native", "SQLite"],
   },
+
+  {
+    slug: "friend-crm",
+    name: "Friend Reconnection CRM",
+    tagline: "A personal CLI that keeps your most important friendships from quietly fading.",
+    status: "active",
+    accent: {
+      border: "border-slate-500",
+      bg: "bg-slate-50",
+      text: "text-slate-800",
+      badge: "bg-slate-100 text-slate-600",
+      dot: "bg-slate-500",
+      cardBg: "bg-slate-50",
+    },
+    description: `I noticed a pattern: I care about maintaining friendships, but the busyness of daily life means weeks become months before I reach out to people I genuinely want to stay close with. Most CRM tools are built for sales pipelines — they're overkill for friendship and miss the point entirely.
+
+I wanted something minimal: a lightweight CLI I could run from the terminal, see who I'm overdue to contact, and come away with a message I'd actually want to send. Not a template, not a notification — a real message, grounded in what's currently happening in my life and what I know about each friend.
+
+The tool stores data in Excel so I can open and edit it directly without the CLI, and the AI generates messages that are warm and specific rather than generic check-ins.`,
+    features: [
+      "Track friends with custom contact frequencies (weekly, monthly, quarterly, and more)",
+      "Shows who you're overdue to contact and by how long",
+      "Prompts you for what's new in your life before generating each message",
+      "OpenAI generates personalized, non-generic message drafts grounded in your context",
+      "Data stored in Excel files — portable and editable outside the tool",
+      "Scheduling logic handles irregular contact patterns without false alarms",
+    ],
+    techStack: [
+      { name: "TypeScript + Node.js", reason: "Type-safe CLI — strong typing catches scheduling logic errors before they cause missed contacts" },
+      { name: "OpenAI GPT-4", reason: "Generates personalized messages based on friend context and what's new in your life" },
+      { name: "Excel (xlsx)", reason: "Portable, human-readable storage — editable directly without needing the tool" },
+    ],
+    skills: [
+      "CLI UX design — conversational prompts that feel natural, not robotic",
+      "AI-assisted personalization at the individual level",
+      "Scheduling algorithm design for irregular contact frequencies",
+      "Data portability design (Excel-first, tool-agnostic storage)",
+    ],
+    links: {},
+    progress: "Active and in personal use. Potential future additions: email/WhatsApp integration, contact notes history.",
+    cardSkills: ["TypeScript", "OpenAI GPT-4", "Node.js"],
+  },
+
+  {
+    slug: "vsdx-processor",
+    name: "VSDX AI Diagram Processor",
+    tagline: "Converts images to editable Visio diagrams and translates existing ones — 85% fewer API calls.",
+    status: "active",
+    accent: {
+      border: "border-indigo-700",
+      bg: "bg-indigo-50",
+      text: "text-indigo-900",
+      badge: "bg-indigo-100 text-indigo-800",
+      dot: "bg-indigo-700",
+      cardBg: "bg-indigo-50",
+    },
+    description: `Teams that maintain large libraries of process diagrams face a painful problem when going multilingual: translating every diagram means opening each file, editing every text shape, and repeating across 6+ languages. With dozens of diagrams, the scope is enormous and the work is entirely mechanical.
+
+I built a two-mode toolkit. The first mode converts image-based diagrams (JPEG/PNG) into actual editable .vsdx files: GPT-4o runs a three-pass vision pipeline — detecting shapes, extracting text, finding connectors — then maps percentage-based positions to VSDX coordinate space and assembles a final file using your actual template shapes.
+
+The second mode batch-translates existing .vsdx files. Instead of translating shape by shape (one API call each), it groups all text per page, reduces calls by 85–95%, and writes the translated text back into the correct XML nodes in the VSDX structure. Both modes work directly on the ZIP/XML internals of the VSDX format.`,
+    features: [
+      "Convert JPEG/PNG diagrams to editable .vsdx files — no manual redrawing",
+      "Three-pass AI vision pipeline: shape detection → text extraction → connector mapping",
+      "Matches detected shapes to a user-provided template catalog with position mapping",
+      "Translate existing .vsdx diagrams into 6+ languages",
+      "Batch translation groups all text per page — 85–95% fewer API calls than shape-by-shape",
+      "Operates directly on VSDX internals (ZIP + XML) — no GUI or Visio license required",
+    ],
+    techStack: [
+      { name: "JavaScript (Node.js)", reason: "Fast scripting environment for file I/O pipelines, ZIP manipulation, and XML processing" },
+      { name: "OpenAI GPT-4o", reason: "Vision pipeline for shape detection and text extraction; full-model translation for quality" },
+      { name: "GPT-4o-mini", reason: "Batch translation of grouped text blocks — high throughput at lower cost" },
+      { name: "JSZip + xml2js", reason: "VSDX files are ZIP archives with XML inside — these libraries handle parsing and reassembly" },
+      { name: "sharp", reason: "Image preprocessing to normalize input before the vision pipeline" },
+    ],
+    skills: [
+      "Multi-pass AI vision pipeline design (detect → extract → map)",
+      "Binary file format engineering (VSDX ZIP/XML internals)",
+      "Coordinate mapping between percentage space and VSDX coordinate space",
+      "Batch API optimization — grouping requests to minimize calls",
+      "XML document processing and targeted node manipulation",
+      "Multilingual AI processing across 6+ languages",
+    ],
+    links: {},
+    progress: "Complete. Both modes (image→VSDX and translate) are working in production. Used to process an existing diagram library.",
+    cardSkills: ["GPT-4o Vision", "Node.js", "VSDX/XML"],
+  },
+
+  {
+    slug: "slack-kb-bot",
+    name: "Slack AI Knowledge Base",
+    tagline: "A production RAG bot that turns your team's collective knowledge into an answerable database.",
+    status: "active",
+    accent: {
+      border: "border-sky-700",
+      bg: "bg-sky-50",
+      text: "text-sky-900",
+      badge: "bg-sky-100 text-sky-800",
+      dot: "bg-sky-700",
+      cardBg: "bg-sky-50",
+    },
+    description: `Teams accumulate knowledge in people's heads, in Slack threads, and in documents nobody can find when they need them. When someone new joins, or when a question comes up that was answered three months ago, that knowledge is effectively gone. I wanted to give teams a dead-simple way to capture what they know and query it conversationally — without leaving Slack.
+
+The bot is deployed and running on Fly.io in production. Team members add "cases" — tools, processes, workflows, recurring situations — via slash commands, no separate UI needed. When anyone @mentions the bot with a question, it embeds the query, runs cosine similarity search against the knowledge base, and feeds the top matches to GPT-4o to compose a grounded answer. The model only uses retrieved context, so answers are backed by what the team has actually documented.`,
+    features: [
+      "Add knowledge cases via Slack slash commands — no external UI or admin panel",
+      "Semantic search: embeds questions and finds relevant cases by cosine similarity",
+      "Grounded answers: GPT-4o responds only from retrieved context, reducing hallucination",
+      "pgvector in Supabase — vector similarity search inside PostgreSQL, no separate vector DB",
+      "Socket Mode: works locally without a public URL during development",
+      "Deployed on Fly.io — always-on, containerized, production-ready",
+    ],
+    techStack: [
+      { name: "Node.js + Bolt SDK", reason: "Bolt is Slack's official framework — handles event routing, slash commands, and @mention parsing cleanly" },
+      { name: "OpenAI text-embedding-3-small", reason: "Embeds case descriptions and incoming questions into the same vector space for semantic comparison" },
+      { name: "OpenAI GPT-4o", reason: "Generates answers grounded in the retrieved cases — not from general knowledge" },
+      { name: "Supabase + pgvector", reason: "Vector similarity search directly in PostgreSQL — no separate vector database to manage" },
+      { name: "Fly.io (Docker)", reason: "Always-on deployment — the bot needs to be running persistently, not serverless" },
+    ],
+    skills: [
+      "RAG (Retrieval-Augmented Generation) architecture end-to-end",
+      "Vector embeddings and cosine similarity search",
+      "Slack app development (Bolt SDK, Socket Mode, slash commands)",
+      "Grounding AI outputs in retrieved context to reduce hallucination",
+      "Containerized production deployment (Docker + Fly.io)",
+    ],
+    links: {},
+    progress: "Deployed and in active use. Potential extensions: case editing via Slack, usage analytics, multi-workspace support.",
+    cardSkills: ["RAG", "pgvector", "Slack Bolt"],
+  },
+
+  {
+    slug: "todoist-ai",
+    name: "Todoist AI Assistant",
+    tagline: "Manage your tasks in natural language — Gemini translates your words into Todoist actions.",
+    status: "active",
+    accent: {
+      border: "border-red-700",
+      bg: "bg-red-50",
+      text: "text-red-900",
+      badge: "bg-red-100 text-red-800",
+      dot: "bg-red-700",
+      cardBg: "bg-red-50",
+    },
+    description: `I use Todoist heavily, but the friction of opening the app, navigating to the right project, setting priorities, and scheduling correctly adds up throughout the day. I'd rather just say what I mean and have the system handle the details.
+
+I built a conversational CLI that wraps the Todoist API with a Gemini-powered natural language layer. You type what you want — "add a call with Yoav next Thursday morning, high priority" — and it creates the task with the right properties. I added a custom priority shorthand that maps to my own workflow: 'i:' for internal work, 's:' for self-development, no prefix for client work (always highest priority). The tool also reads images: upload a photo of a whiteboard, a handwritten note, or a schedule and it extracts and creates the tasks automatically.`,
+    features: [
+      "Create, search, update, and complete tasks in natural language",
+      "Custom priority shorthand: 'i:' internal, 's:' self-work, no prefix = client (highest)",
+      "Image input: upload a photo of a schedule or handwritten list and get Todoist tasks",
+      "Recurring task scheduling in natural language ('every weekday', 'first Monday of the month')",
+      "Conversational context: remembers what you've discussed in a session for follow-ups",
+    ],
+    techStack: [
+      { name: "JavaScript (Node.js)", reason: "Fast CLI scripting — no build step, runs immediately from the terminal" },
+      { name: "Google Gemini API", reason: "Handles both text conversation and vision — a single model for chat and image analysis" },
+      { name: "Todoist REST API", reason: "Full task CRUD — create, read, update, complete, schedule via the official API" },
+    ],
+    skills: [
+      "Natural language interface design for task management",
+      "Conversational AI UX — stateful session, follow-up commands",
+      "AI vision for document and handwriting parsing",
+      "Custom priority system design and workflow mapping",
+      "REST API integration with structured output parsing",
+    ],
+    links: {},
+    progress: "Active and in daily use. The image input feature is particularly useful for converting handwritten planning sessions into Todoist tasks.",
+    cardSkills: ["Google Gemini", "Todoist API", "Node.js"],
+  },
+
+  {
+    slug: "ai-chat-app",
+    name: "AI Chat App",
+    tagline: "A fullstack streaming chat app — real-time AI responses, modern React patterns, clean architecture.",
+    status: "active",
+    accent: {
+      border: "border-lime-700",
+      bg: "bg-lime-50",
+      text: "text-lime-900",
+      badge: "bg-lime-100 text-lime-800",
+      dot: "bg-lime-700",
+      cardBg: "bg-lime-50",
+    },
+    description: `As AI chat interfaces became ubiquitous, I wanted to understand the full stack behind them — not just the API call, but the streaming transport layer, the React state management, the routing architecture, and how to keep API keys server-side while streaming responses to the client.
+
+I built this as a deliberate learning project using a production-quality toolset: TanStack Router and TanStack Query for modern data-aware routing, shadcn/ui for a polished component library, and the Vercel AI SDK for streaming. The Express backend acts as a proxy — the Gemini API key stays server-side and the frontend never touches it directly.
+
+The result is a clean, fast streaming chat UI where responses appear character by character. More importantly, it's a working reference for fullstack TypeScript AI app architecture.`,
+    features: [
+      "Real-time streaming responses — text appears character by character via Vercel AI SDK",
+      "Express proxy backend — API key never exposed to the client",
+      "TanStack Router for client-side routing with data-aware navigation",
+      "shadcn/ui component library — accessible, composable, production-quality UI",
+      "TypeScript end-to-end — frontend and backend share types",
+    ],
+    techStack: [
+      { name: "React + Vite + TypeScript", reason: "Fast HMR in development; Vite's build is optimized for production bundles" },
+      { name: "TanStack Router + TanStack Query", reason: "Modern data-aware routing — route-level data loading with full type safety" },
+      { name: "Tailwind CSS + shadcn/ui", reason: "Composable component library built on Radix UI — accessible primitives, no design system to build from scratch" },
+      { name: "Node.js + Express", reason: "Lightweight proxy server — handles AI API authentication and streaming response passthrough" },
+      { name: "Google Gemini 2.5 Flash via Vercel AI SDK", reason: "useChat hook manages streaming state; streamText on the server pipes the Gemini response to the client" },
+    ],
+    skills: [
+      "Fullstack TypeScript architecture (shared types across client and server)",
+      "Streaming AI responses with Vercel AI SDK (useChat + streamText)",
+      "Modern React routing patterns with TanStack Router",
+      "Client-server API proxying for secure key management",
+      "Component library integration and composition (shadcn/ui + Radix)",
+    ],
+    links: {},
+    progress: "Complete as a working reference implementation. The architecture pattern is reusable for production AI chat applications.",
+    cardSkills: ["Vercel AI SDK", "React", "Gemini"],
+  },
 ];
 
 export function getProjectBySlug(slug: string): Project | undefined {
