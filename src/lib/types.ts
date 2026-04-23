@@ -8,6 +8,7 @@ export interface Project {
   name: string;
   tagline: string;
   status: "active" | "early-stage" | "utility";
+  gif?: string;
   accent: {
     border: string;
     bg: string;

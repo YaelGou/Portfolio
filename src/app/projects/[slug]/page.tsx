@@ -30,9 +30,9 @@ export async function generateMetadata({
 }
 
 const statusConfig: Record<string, { label: string; classes: string }> = {
-  active: { label: "Active", classes: "bg-stone-100 text-stone-500" },
-  "early-stage": { label: "In Progress", classes: "bg-amber-50 text-amber-700 border border-amber-200" },
-  utility: { label: "Active", classes: "bg-stone-100 text-stone-500" },
+  active: { label: "In Use", classes: "bg-zinc-800 text-zinc-400" },
+  "early-stage": { label: "In Progress", classes: "bg-amber-950/60 text-amber-400 border border-amber-800/50" },
+  utility: { label: "In Use", classes: "bg-zinc-800 text-zinc-400" },
 };
 
 export default async function ProjectPage({
@@ -49,7 +49,7 @@ export default async function ProjectPage({
       {/* Back link */}
       <Link
         href="/"
-        className="inline-flex items-center gap-1 text-sm text-stone-400 hover:text-stone-700 transition-colors mb-12"
+        className="inline-flex items-center gap-1 text-sm text-zinc-600 hover:text-zinc-300 transition-colors mb-12"
       >
         ← All projects
       </Link>
@@ -63,7 +63,7 @@ export default async function ProjectPage({
             {statusConfig[project.status].label}
           </span>
         </div>
-        <h1 className="font-serif text-4xl md:text-5xl text-stone-800 leading-tight mb-4">
+        <h1 className="font-serif text-4xl md:text-5xl text-white leading-tight mb-4">
           {project.name}
         </h1>
         <p className={`text-xl leading-relaxed ${project.accent.text}`}>
@@ -72,18 +72,24 @@ export default async function ProjectPage({
       </header>
 
       {/* Hero thumbnail */}
-      <div
-        className={`w-full h-56 rounded-xl mb-12 overflow-hidden ${project.accent.cardBg} border border-stone-200`}
-      >
-        <ProjectThumbnail slug={project.slug} className="w-full h-full" />
+      <div className="w-full h-56 rounded-xl mb-12 overflow-hidden bg-zinc-900 border border-zinc-800">
+        {project.gif ? (
+          <img
+            src={project.gif}
+            alt={project.name}
+            className="w-full h-full object-cover"
+          />
+        ) : (
+          <ProjectThumbnail slug={project.slug} className="w-full h-full" />
+        )}
       </div>
 
       {/* The Why */}
       <section className="mb-12">
-        <h2 className="font-serif text-2xl text-stone-800 mb-5">The Why</h2>
+        <h2 className="font-serif text-2xl text-white mb-5">The Why</h2>
         <div className="space-y-4">
           {project.description.split("\n\n").map((para, i) => (
-            <p key={i} className="text-stone-600 leading-relaxed">
+            <p key={i} className="text-zinc-400 leading-relaxed">
               {para}
             </p>
           ))}
@@ -95,10 +101,10 @@ export default async function ProjectPage({
 
       {/* What It Does */}
       <section className="mb-12">
-        <h2 className="font-serif text-2xl text-stone-800 mb-5">What It Does</h2>
+        <h2 className="font-serif text-2xl text-white mb-5">What It Does</h2>
         <ul className="space-y-3">
           {project.features.map((feature, i) => (
-            <li key={i} className="flex gap-3 text-stone-600">
+            <li key={i} className="flex gap-3 text-zinc-400">
               <span className={`mt-1.5 w-1.5 h-1.5 rounded-full shrink-0 ${project.accent.dot}`} />
               <span className="leading-relaxed">{feature}</span>
             </li>
@@ -108,7 +114,7 @@ export default async function ProjectPage({
 
       {/* How It's Built */}
       <section className="mb-12">
-        <h2 className="font-serif text-2xl text-stone-800 mb-5">How It&apos;s Built</h2>
+        <h2 className="font-serif text-2xl text-white mb-5">How It&apos;s Built</h2>
         <div className="space-y-4">
           {project.techStack.map((item) => (
             <div key={item.name} className="flex gap-4">
@@ -119,7 +125,7 @@ export default async function ProjectPage({
                   {item.name}
                 </span>
               </div>
-              <p className="text-stone-500 leading-relaxed text-sm pt-1">{item.reason}</p>
+              <p className="text-zinc-500 leading-relaxed text-sm pt-1">{item.reason}</p>
             </div>
           ))}
         </div>
@@ -127,7 +133,7 @@ export default async function ProjectPage({
 
       {/* Skills Demonstrated */}
       <section className="mb-12">
-        <h2 className="font-serif text-2xl text-stone-800 mb-5">Skills Demonstrated</h2>
+        <h2 className="font-serif text-2xl text-white mb-5">Skills Demonstrated</h2>
         <div className="flex flex-wrap gap-2">
           {project.skills.map((skill) => (
             <SkillPill
@@ -142,7 +148,7 @@ export default async function ProjectPage({
       {/* Links */}
       {(project.links.live || project.links.github) && (
         <section className="mb-12">
-          <h2 className="font-serif text-2xl text-stone-800 mb-5">Links</h2>
+          <h2 className="font-serif text-2xl text-white mb-5">Links</h2>
           <div className="flex gap-4">
             {project.links.live && (
               <a
@@ -159,7 +165,7 @@ export default async function ProjectPage({
                 href={project.links.github}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-sm font-medium px-4 py-2 rounded-lg border border-stone-200 text-stone-600 hover:bg-stone-50 transition-colors"
+                className="text-sm font-medium px-4 py-2 rounded-lg border border-zinc-700 text-zinc-400 hover:bg-zinc-800 transition-colors"
               >
                 GitHub →
               </a>
@@ -170,8 +176,8 @@ export default async function ProjectPage({
 
       {/* Progress */}
       <section className="mb-16">
-        <h2 className="font-serif text-2xl text-stone-800 mb-4">Status</h2>
-        <p className="text-stone-500 leading-relaxed">{project.progress}</p>
+        <h2 className="font-serif text-2xl text-white mb-4">Status</h2>
+        <p className="text-zinc-500 leading-relaxed">{project.progress}</p>
       </section>
 
       <Footer />

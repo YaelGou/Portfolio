@@ -1,153 +1,21 @@
 import type { Project } from "@/lib/types";
 
 export const projects: Project[] = [
-  {
-    slug: "studyquiz",
-    name: "Studyquiz",
-    tagline: "Keeping four degrees worth of knowledge alive through adaptive AI quizzing.",
-    status: "early-stage",
-    accent: {
-      border: "border-amber-700",
-      bg: "bg-amber-50",
-      text: "text-amber-900",
-      badge: "bg-amber-100 text-amber-800",
-      dot: "bg-amber-700",
-      cardBg: "bg-amber-50",
-    },
-    description: `I have four degrees and have completed roughly 150 university courses — economics, history of art, psychology, philosophy, mathematics. That's a lot of knowledge to accumulate. The problem is that without active retrieval, it fades. A year after finishing a course, I can recall the broad strokes but lose the detail that made it interesting.
-
-I built Studyquiz to fight the forgetting curve. It ingests my actual course materials — PDFs, lecture notes, images — and generates quizzes at exactly the right difficulty level based on how I've been performing. The system knows which subjects I'm weak on and weights its questions accordingly. For my art history courses, it pulls up actual images and asks me to identify the work, the artist, the period.
-
-This is knowledge I paid for with years of study. I want it to stay with me.`,
-    features: [
-      "Ingests PDFs, documents, and images — parses, chunks, and stores them by subject automatically",
-      "Generates quizzes across 7 difficulty levels from pure recall to synthesis and edge cases",
-      "Art history mode: shows images for visual identification using Claude Vision",
-      "Tracks per-subject performance in SQLite and weights future questions toward weaker areas",
-      "Session continuity — progress survives server restarts and returns to where you left off",
-      "Semantic retrieval via ChromaDB — finds relevant material by meaning, not just keyword match",
-    ],
-    techStack: [
-      { name: "Python + Flask", reason: "Lightweight local server, no build step — runs on any machine without deployment complexity" },
-      { name: "ChromaDB", reason: "Local vector database for semantic search — finds relevant content chunks by meaning, not just keywords" },
-      { name: "SQLite", reason: "Zero-config local database for tracking per-subject progress and quiz sessions across restarts" },
-      { name: "Claude API", reason: "Quiz generation across 7 difficulty levels, plus Vision API for identifying art images by sight" },
-    ],
-    skills: [
-      "AI prompt engineering for adaptive difficulty scaling",
-      "Semantic search with vector embeddings (ChromaDB)",
-      "Multi-modal AI integration (text + image analysis)",
-      "Progress tracking data modeling across hundreds of subjects",
-      "Local-first architecture — no cloud dependency, fully offline",
-      "Document ingestion pipeline (PDF, DOCX, images)",
-    ],
-    links: {},
-    progress: "In progress — core ingestion and quiz engine are working. Currently improving subject classification accuracy and adding spaced repetition scheduling.",
-    cardSkills: ["Claude API", "ChromaDB", "Python"],
-  },
-
-  {
-    slug: "retreat-architect",
-    name: "Retreat Architect",
-    tagline: "Design your own meditation retreat, then surrender to it completely.",
-    status: "early-stage",
-    accent: {
-      border: "border-emerald-700",
-      bg: "bg-emerald-50",
-      text: "text-emerald-900",
-      badge: "bg-emerald-100 text-emerald-800",
-      dot: "bg-emerald-700",
-      cardBg: "bg-emerald-50",
-    },
-    description: `I practice Vipassana meditation in the Goenka tradition, which involves silent retreats with a very specific daily structure: early morning wake bells, sitting meditation sessions, walking periods, rest, and a dhamma discourse in the evening. Running a personal retreat — even just for a few days — means managing an exact sequence of audio cues, announcements, and practice instructions that has to work flawlessly without supervision.
-
-The apps I found were either too general or too rigid. I wanted to design my own retreat schedule — choosing which practices to include, how to proportion sitting time, which dhamma content to draw from — and then lock it in for live mode, where everything runs on autopilot. The design principle came first: act as the architect, then become the retreatant.
-
-The result is a cross-platform tool that runs on iOS and Android. You configure the retreat with a setup wizard, tweak the schedule with a drag-and-drop editor, generate all the spoken announcements with TTS, and then enter live mode — which is fully offline, fully automatic, and impossible to accidentally break.`,
-    features: [
-      "6-step setup wizard: duration, wake time, practices, proportions, constraints, and Spotify integration",
-      "Drag-and-drop schedule editor with hard and soft constraint validation",
-      "Pre-generates all spoken announcements via OpenAI TTS at lock time — live mode runs fully offline",
-      "Dharma content library with teachings organized by day, topic, and tradition source",
-      "Web Audio API bell synthesis — no audio files needed, works offline",
-      "Cross-platform iOS/Android via Capacitor; Progressive Web App on desktop",
-    ],
-    techStack: [
-      { name: "React + Vite + TypeScript", reason: "Fast iteration; TypeScript enforces constraint logic correctness at compile time" },
-      { name: "Capacitor", reason: "Wraps the web app as a native iOS/Android app — one codebase, cross-platform" },
-      { name: "OpenAI TTS", reason: "Pre-generates all spoken announcements before the retreat begins so live mode is 100% offline" },
-      { name: "Zustand", reason: "Minimal state management for retreat config and live mode sequence state" },
-      { name: "Web Audio API", reason: "Synthesizes meditation bells directly in the browser — no audio files needed, works offline" },
-    ],
-    skills: [
-      "Constraint-based scheduling system design (hard vs soft constraints)",
-      "Cross-platform mobile deployment (iOS/Android via Capacitor)",
-      "Offline-first architecture with audio pre-generation and IndexedDB caching",
-      "Real-time sequence state machines for live retreat execution",
-      "Audio synthesis with Web Audio API",
-      "UX design for contemplative and focused contexts",
-    ],
-    links: {},
-    progress: "In progress — core scheduling and live mode are working. Currently redesigning the UI and improving Spotify integration.",
-    cardSkills: ["React", "Capacitor", "OpenAI TTS"],
-  },
-
-  {
-    slug: "conflict-soup",
-    name: "Conflict Soup",
-    tagline: "A structured space for processing conflict in polyamorous relationships.",
-    status: "active",
-    accent: {
-      border: "border-rose-700",
-      bg: "bg-rose-50",
-      text: "text-rose-900",
-      badge: "bg-rose-100 text-rose-800",
-      dot: "bg-rose-700",
-      cardBg: "bg-rose-50",
-    },
-    description: `I'm in polyamorous relationships, which means more people, more complexity, and more potential for recurring patterns of conflict to go unaddressed. I've studied Nonviolent Communication (NVC) and find it genuinely useful — but in the heat of conflict, it's hard to hold the framework in mind while also feeling the feelings.
-
-I built Conflict Soup to create a space for structured conflict processing outside the moment of conflict itself. The idea is that you log incidents when they happen — messy and emotionally raw — and the system immediately offers an NVC rewrite: the same situation described in terms of observations, feelings, needs, and requests. Over time, patterns emerge across incidents. Issues cluster. The tool helps you see which themes keep appearing.
-
-When it's time to actually address something, the app facilitates a structured resolution session: a focused conversation about a specific issue that ends with a concrete, mutual agreement on record. The goal isn't to eliminate conflict — it's to make conflict a place where relationships can grow instead of erode.`,
-    features: [
-      "Relationship units: create dyads, triads, or poly networks with consent-based membership",
-      "Incident tracking with immutable original text — the raw account is always preserved",
-      "AI-powered NVC rewrites using the OFNR framework (Observations, Feelings, Needs, Requests)",
-      "Issue clustering: link incidents to recurring themes with AI-assisted suggestions",
-      "Resolution sessions: structured conversations that end in concrete, stored agreements",
-      "'Pick for us' mode: weighted issue selection based on incident count and time since last discussion",
-    ],
-    techStack: [
-      { name: "Next.js + TypeScript", reason: "App Router for clean server rendering; strong typing for complex relational data structures" },
-      { name: "Supabase", reason: "Managed PostgreSQL with Row Level Security — each relationship unit's data is strictly private to its members" },
-      { name: "OpenAI API", reason: "Powers both NVC rewrites and issue clustering — two distinct AI tasks with carefully different prompting strategies" },
-    ],
-    skills: [
-      "Multi-user data modeling with complex relational structures (dyads, triads, networks)",
-      "Privacy-first architecture with Row Level Security",
-      "AI-assisted NVC communication transformation",
-      "Pattern recognition and clustering across relationship data over time",
-      "UX design for emotionally sensitive, high-stakes interactions",
-      "Audit logging for data integrity in personal records",
-    ],
-    links: {},
-    progress: "Active and in regular use. Planned next: mobile-responsive improvements, recurring pattern visualization, and notifications for unresolved issues.",
-    cardSkills: ["Next.js", "Supabase", "OpenAI"],
-  },
+  // ── In Use (featured first) ────────────────────────────────────────────────
 
   {
     slug: "karaoke-brain",
     name: "Karaoke Brain",
     tagline: "A mood-organized song manager so you always know what to sing next.",
     status: "active",
+    gif: "https://media.giphy.com/media/lqqecfmnq2ldOtZEES/giphy.gif",
     accent: {
-      border: "border-violet-700",
-      bg: "bg-violet-50",
-      text: "text-violet-900",
-      badge: "bg-violet-100 text-violet-800",
-      dot: "bg-violet-700",
-      cardBg: "bg-violet-50",
+      border: "border-violet-500",
+      bg: "bg-violet-900/30",
+      text: "text-violet-300",
+      badge: "bg-violet-900/40 text-violet-300",
+      dot: "bg-violet-500",
+      cardBg: "bg-violet-950",
     },
     description: `I love karaoke, but my song list was a mess — a flat note in my phone with hundreds of songs I could never find in the right moment. What I actually needed was organization by mood, not alphabetical order. "I'm feeling playful and high energy" should surface completely different songs than "I'm feeling nostalgic and want to belt something emotional."
 
@@ -186,13 +54,14 @@ The app also solves a practical karaoke problem: before you go up and request a 
     name: "Retention Intelligence",
     tagline: "AI-powered subscriber analytics that turns churn signals into founder briefs.",
     status: "active",
+    gif: "https://media.giphy.com/media/xUA7aSvAOa9GpY18hG/giphy.gif",
     accent: {
-      border: "border-teal-700",
-      bg: "bg-teal-50",
-      text: "text-teal-900",
-      badge: "bg-teal-100 text-teal-800",
-      dot: "bg-teal-700",
-      cardBg: "bg-teal-50",
+      border: "border-teal-500",
+      bg: "bg-teal-900/30",
+      text: "text-teal-300",
+      badge: "bg-teal-900/40 text-teal-300",
+      dot: "bg-teal-500",
+      cardBg: "bg-teal-950",
     },
     description: `Working on retention analytics for an edtech program, I needed a way to synthesize subscriber engagement signals — behavioral data, usage patterns, churn indicators — into something actionable for program founders. The challenge wasn't data collection; it was sense-making at scale. Founders needed to see not just metrics, but narratives about what was happening with their subscribers, and clear guidance on what to do about it.
 
@@ -226,17 +95,63 @@ The design constraint that shaped everything: it had to work for non-technical f
   },
 
   {
+    slug: "conflict-soup",
+    name: "Conflict Soup",
+    tagline: "A structured space for processing conflict in polyamorous relationships.",
+    status: "active",
+    gif: "https://media.giphy.com/media/ecd4TvE96YkIQuP5XI/giphy.gif",
+    accent: {
+      border: "border-rose-500",
+      bg: "bg-rose-900/30",
+      text: "text-rose-300",
+      badge: "bg-rose-900/40 text-rose-300",
+      dot: "bg-rose-500",
+      cardBg: "bg-rose-950",
+    },
+    description: `I'm in polyamorous relationships, which means more people, more complexity, and more potential for recurring patterns of conflict to go unaddressed. I've studied Nonviolent Communication (NVC) and find it genuinely useful — but in the heat of conflict, it's hard to hold the framework in mind while also feeling the feelings.
+
+I built Conflict Soup to create a space for structured conflict processing outside the moment of conflict itself. The idea is that you log incidents when they happen — messy and emotionally raw — and the system immediately offers an NVC rewrite: the same situation described in terms of observations, feelings, needs, and requests. Over time, patterns emerge across incidents. Issues cluster. The tool helps you see which themes keep appearing.
+
+When it's time to actually address something, the app facilitates a structured resolution session: a focused conversation about a specific issue that ends with a concrete, mutual agreement on record. The goal isn't to eliminate conflict — it's to make conflict a place where relationships can grow instead of erode.`,
+    features: [
+      "Relationship units: create dyads, triads, or poly networks with consent-based membership",
+      "Incident tracking with immutable original text — the raw account is always preserved",
+      "AI-powered NVC rewrites using the OFNR framework (Observations, Feelings, Needs, Requests)",
+      "Issue clustering: link incidents to recurring themes with AI-assisted suggestions",
+      "Resolution sessions: structured conversations that end in concrete, stored agreements",
+      "'Pick for us' mode: weighted issue selection based on incident count and time since last discussion",
+    ],
+    techStack: [
+      { name: "Next.js + TypeScript", reason: "App Router for clean server rendering; strong typing for complex relational data structures" },
+      { name: "Supabase", reason: "Managed PostgreSQL with Row Level Security — each relationship unit's data is strictly private to its members" },
+      { name: "OpenAI API", reason: "Powers both NVC rewrites and issue clustering — two distinct AI tasks with carefully different prompting strategies" },
+    ],
+    skills: [
+      "Multi-user data modeling with complex relational structures (dyads, triads, networks)",
+      "Privacy-first architecture with Row Level Security",
+      "AI-assisted NVC communication transformation",
+      "Pattern recognition and clustering across relationship data over time",
+      "UX design for emotionally sensitive, high-stakes interactions",
+      "Audit logging for data integrity in personal records",
+    ],
+    links: {},
+    progress: "Active and in regular use. Planned next: mobile-responsive improvements, recurring pattern visualization, and notifications for unresolved issues.",
+    cardSkills: ["Next.js", "Supabase", "OpenAI"],
+  },
+
+  {
     slug: "journaling",
     name: "Lifebook Journaling System",
     tagline: "A five-level journaling hierarchy that connects every day to a larger intention.",
     status: "utility",
+    gif: "https://media.giphy.com/media/lHQP1QlRMru2Qz6uye/giphy.gif",
     accent: {
-      border: "border-amber-800",
-      bg: "bg-orange-50",
-      text: "text-amber-950",
-      badge: "bg-amber-100 text-amber-900",
-      dot: "bg-amber-800",
-      cardBg: "bg-orange-50",
+      border: "border-amber-500",
+      bg: "bg-amber-900/30",
+      text: "text-amber-300",
+      badge: "bg-amber-900/40 text-amber-300",
+      dot: "bg-amber-500",
+      cardBg: "bg-amber-950",
     },
     description: `I follow the Lifebook methodology, which organizes life into ten categories — health, emotional life, relationships, spirituality, career, and more — each with a vision, a purpose, and a strategy. Maintaining that kind of structured intentionality across daily life requires a system that's both flexible and consistent. Most journaling apps are neither.
 
@@ -271,62 +186,18 @@ The result is a journaling practice that feels coherent: every day connects to e
   },
 
   {
-    slug: "cyclic-life",
-    name: "Cyclic Life",
-    tagline: "A private, beautifully customizable cycle tracking app built for nuance.",
-    status: "early-stage",
-    accent: {
-      border: "border-pink-700",
-      bg: "bg-pink-50",
-      text: "text-pink-900",
-      badge: "bg-pink-100 text-pink-800",
-      dot: "bg-pink-700",
-      cardBg: "bg-pink-50",
-    },
-    description: `Cycle tracking apps tend to fall into two camps: the ones designed around fertility and medical outcomes, and the ones so minimal they're just a period calendar. I wanted something different — a highly customizable daily logging tool built around the idea that every cycle is unique and worth understanding in detail.
-
-The app is inspired by Clue's icon-based UX: big, satisfying icons to tap, no free-text walls, clean structured input. But unlike Clue, everything is customizable. You define the categories, the tracking items, and what kind of input each uses — binary yes/no, intensity 1-5, single choice, multi-select, numeric, count, or duration. Sleep quality, mood shifts, energy patterns, specific habits — whatever matters in your cycle, you can track it.
-
-Privacy comes first by design. All data lives on-device in SQLite by default. No account required, no cloud, nothing leaves your phone unless you choose to sync. When you want a second lens on your patterns, optional AI observations are available — using your own API key or a custom-compatible endpoint.`,
-    features: [
-      "Fully customizable tracking items: define categories, items, and input types to match your life",
-      "Six input types: binary, intensity 1–5, single choice, multi-select, numeric, count, duration",
-      "Period tracking with cycle phase estimates (follicular, ovulatory, luteal) with confidence labels",
-      "Offline-first SQLite storage — data stays on-device, no account or cloud required",
-      "Deterministic analytics first: pattern detection before any AI layer",
-      "AI observations with user-provided API key or custom OpenAI-compatible endpoint",
-    ],
-    techStack: [
-      { name: "Expo + React Native + TypeScript", reason: "Single codebase for iOS and Android; TypeScript ensures correctness in cycle phase calculations" },
-      { name: "SQLite (local)", reason: "All data stays on-device by default — no account required, no cloud dependency" },
-      { name: "Supabase (optional)", reason: "Available for users who want to sync across devices or keep an encrypted backup" },
-      { name: "AI provider abstraction", reason: "Supports built-in cloud mode, user API key, or custom OpenAI-compatible endpoint — privacy-preserving by design" },
-    ],
-    skills: [
-      "Offline-first mobile architecture with local SQLite",
-      "Custom input type system for flexible, structured data capture",
-      "Cycle phase estimation and deterministic analytics",
-      "AI provider abstraction layer (multi-endpoint support)",
-      "Cross-platform mobile development with Expo",
-      "Privacy-first data architecture (local-first, optional sync)",
-    ],
-    links: {},
-    progress: "In development. Architecture and data model are complete. Building out the core tracking UI screens; first release planned for personal use.",
-    cardSkills: ["Expo", "React Native", "SQLite"],
-  },
-
-  {
     slug: "friend-crm",
     name: "Friend Reconnection CRM",
     tagline: "A personal CLI that keeps your most important friendships from quietly fading.",
     status: "active",
+    gif: "https://media.giphy.com/media/309gFKfRr2o52spjHO/giphy.gif",
     accent: {
       border: "border-slate-500",
-      bg: "bg-slate-50",
-      text: "text-slate-800",
-      badge: "bg-slate-100 text-slate-600",
+      bg: "bg-slate-800/50",
+      text: "text-slate-300",
+      badge: "bg-slate-800 text-slate-400",
       dot: "bg-slate-500",
-      cardBg: "bg-slate-50",
+      cardBg: "bg-slate-900",
     },
     description: `I noticed a pattern: I care about maintaining friendships, but the busyness of daily life means weeks become months before I reach out to people I genuinely want to stay close with. Most CRM tools are built for sales pipelines — they're overkill for friendship and miss the point entirely.
 
@@ -362,13 +233,14 @@ The tool stores data in Excel so I can open and edit it directly without the CLI
     name: "VSDX AI Diagram Processor",
     tagline: "Converts images to editable Visio diagrams and translates existing ones — 85% fewer API calls.",
     status: "active",
+    gif: "https://media.giphy.com/media/p9WGfmQMEENR9zRmCO/giphy.gif",
     accent: {
-      border: "border-indigo-700",
-      bg: "bg-indigo-50",
-      text: "text-indigo-900",
-      badge: "bg-indigo-100 text-indigo-800",
-      dot: "bg-indigo-700",
-      cardBg: "bg-indigo-50",
+      border: "border-indigo-500",
+      bg: "bg-indigo-900/30",
+      text: "text-indigo-300",
+      badge: "bg-indigo-900/40 text-indigo-300",
+      dot: "bg-indigo-500",
+      cardBg: "bg-indigo-950",
     },
     description: `Teams that maintain large libraries of process diagrams face a painful problem when going multilingual: translating every diagram means opening each file, editing every text shape, and repeating across 6+ languages. With dozens of diagrams, the scope is enormous and the work is entirely mechanical.
 
@@ -408,13 +280,14 @@ The second mode batch-translates existing .vsdx files. Instead of translating sh
     name: "Slack AI Knowledge Base",
     tagline: "A production RAG bot that turns your team's collective knowledge into an answerable database.",
     status: "active",
+    gif: "https://media.giphy.com/media/S60CrN9iMxFlyp7uM8/giphy.gif",
     accent: {
-      border: "border-sky-700",
-      bg: "bg-sky-50",
-      text: "text-sky-900",
-      badge: "bg-sky-100 text-sky-800",
-      dot: "bg-sky-700",
-      cardBg: "bg-sky-50",
+      border: "border-sky-500",
+      bg: "bg-sky-900/30",
+      text: "text-sky-300",
+      badge: "bg-sky-900/40 text-sky-300",
+      dot: "bg-sky-500",
+      cardBg: "bg-sky-950",
     },
     description: `Teams accumulate knowledge in people's heads, in Slack threads, and in documents nobody can find when they need them. When someone new joins, or when a question comes up that was answered three months ago, that knowledge is effectively gone. I wanted to give teams a dead-simple way to capture what they know and query it conversationally — without leaving Slack.
 
@@ -451,13 +324,14 @@ The bot is deployed and running on Fly.io in production. Team members add "cases
     name: "Todoist AI Assistant",
     tagline: "Manage your tasks in natural language — Gemini translates your words into Todoist actions.",
     status: "active",
+    gif: "https://media.giphy.com/media/kLOkqcrdC5mrCE7k7G/giphy.gif",
     accent: {
-      border: "border-red-700",
-      bg: "bg-red-50",
-      text: "text-red-900",
-      badge: "bg-red-100 text-red-800",
-      dot: "bg-red-700",
-      cardBg: "bg-red-50",
+      border: "border-red-500",
+      bg: "bg-red-900/30",
+      text: "text-red-300",
+      badge: "bg-red-900/40 text-red-300",
+      dot: "bg-red-500",
+      cardBg: "bg-red-950",
     },
     description: `I use Todoist heavily, but the friction of opening the app, navigating to the right project, setting priorities, and scheduling correctly adds up throughout the day. I'd rather just say what I mean and have the system handle the details.
 
@@ -486,48 +360,145 @@ I built a conversational CLI that wraps the Todoist API with a Gemini-powered na
     cardSkills: ["Google Gemini", "Todoist API", "Node.js"],
   },
 
+  // ── In Progress (featured first) ──────────────────────────────────────────
+
   {
-    slug: "ai-chat-app",
-    name: "AI Chat App",
-    tagline: "A fullstack streaming chat app — real-time AI responses, modern React patterns, clean architecture.",
-    status: "active",
+    slug: "cyclic-life",
+    name: "Cyclic Life",
+    tagline: "A private, beautifully customizable cycle tracking app built for nuance.",
+    status: "early-stage",
+    gif: "https://media.giphy.com/media/3oEjHNHGf0i6OIhJII/giphy.gif",
     accent: {
-      border: "border-lime-700",
-      bg: "bg-lime-50",
-      text: "text-lime-900",
-      badge: "bg-lime-100 text-lime-800",
-      dot: "bg-lime-700",
-      cardBg: "bg-lime-50",
+      border: "border-pink-500",
+      bg: "bg-pink-900/30",
+      text: "text-pink-300",
+      badge: "bg-pink-900/40 text-pink-300",
+      dot: "bg-pink-500",
+      cardBg: "bg-pink-950",
     },
-    description: `As AI chat interfaces became ubiquitous, I wanted to understand the full stack behind them — not just the API call, but the streaming transport layer, the React state management, the routing architecture, and how to keep API keys server-side while streaming responses to the client.
+    description: `Cycle tracking apps tend to fall into two camps: the ones designed around fertility and medical outcomes, and the ones so minimal they're just a period calendar. I wanted something different — a highly customizable daily logging tool built around the idea that every cycle is unique and worth understanding in detail.
 
-I built this as a deliberate learning project using a production-quality toolset: TanStack Router and TanStack Query for modern data-aware routing, shadcn/ui for a polished component library, and the Vercel AI SDK for streaming. The Express backend acts as a proxy — the Gemini API key stays server-side and the frontend never touches it directly.
+The app is inspired by Clue's icon-based UX: big, satisfying icons to tap, no free-text walls, clean structured input. But unlike Clue, everything is customizable. You define the categories, the tracking items, and what kind of input each uses — binary yes/no, intensity 1-5, single choice, multi-select, numeric, count, or duration. Sleep quality, mood shifts, energy patterns, specific habits — whatever matters in your cycle, you can track it.
 
-The result is a clean, fast streaming chat UI where responses appear character by character. More importantly, it's a working reference for fullstack TypeScript AI app architecture.`,
+Privacy comes first by design. All data lives on-device in SQLite by default. No account required, no cloud, nothing leaves your phone unless you choose to sync. When you want a second lens on your patterns, optional AI observations are available — using your own API key or a custom-compatible endpoint.`,
     features: [
-      "Real-time streaming responses — text appears character by character via Vercel AI SDK",
-      "Express proxy backend — API key never exposed to the client",
-      "TanStack Router for client-side routing with data-aware navigation",
-      "shadcn/ui component library — accessible, composable, production-quality UI",
-      "TypeScript end-to-end — frontend and backend share types",
+      "Fully customizable tracking items: define categories, items, and input types to match your life",
+      "Six input types: binary, intensity 1–5, single choice, multi-select, numeric, count, duration",
+      "Period tracking with cycle phase estimates (follicular, ovulatory, luteal) with confidence labels",
+      "Offline-first SQLite storage — data stays on-device, no account or cloud required",
+      "Deterministic analytics first: pattern detection before any AI layer",
+      "AI observations with user-provided API key or custom OpenAI-compatible endpoint",
     ],
     techStack: [
-      { name: "React + Vite + TypeScript", reason: "Fast HMR in development; Vite's build is optimized for production bundles" },
-      { name: "TanStack Router + TanStack Query", reason: "Modern data-aware routing — route-level data loading with full type safety" },
-      { name: "Tailwind CSS + shadcn/ui", reason: "Composable component library built on Radix UI — accessible primitives, no design system to build from scratch" },
-      { name: "Node.js + Express", reason: "Lightweight proxy server — handles AI API authentication and streaming response passthrough" },
-      { name: "Google Gemini 2.5 Flash via Vercel AI SDK", reason: "useChat hook manages streaming state; streamText on the server pipes the Gemini response to the client" },
+      { name: "Expo + React Native + TypeScript", reason: "Single codebase for iOS and Android; TypeScript ensures correctness in cycle phase calculations" },
+      { name: "SQLite (local)", reason: "All data stays on-device by default — no account required, no cloud dependency" },
+      { name: "Supabase (optional)", reason: "Available for users who want to sync across devices or keep an encrypted backup" },
+      { name: "AI provider abstraction", reason: "Supports built-in cloud mode, user API key, or custom OpenAI-compatible endpoint — privacy-preserving by design" },
     ],
     skills: [
-      "Fullstack TypeScript architecture (shared types across client and server)",
-      "Streaming AI responses with Vercel AI SDK (useChat + streamText)",
-      "Modern React routing patterns with TanStack Router",
-      "Client-server API proxying for secure key management",
-      "Component library integration and composition (shadcn/ui + Radix)",
+      "Offline-first mobile architecture with local SQLite",
+      "Custom input type system for flexible, structured data capture",
+      "Cycle phase estimation and deterministic analytics",
+      "AI provider abstraction layer (multi-endpoint support)",
+      "Cross-platform mobile development with Expo",
+      "Privacy-first data architecture (local-first, optional sync)",
     ],
     links: {},
-    progress: "Complete as a working reference implementation. The architecture pattern is reusable for production AI chat applications.",
-    cardSkills: ["Vercel AI SDK", "React", "Gemini"],
+    progress: "In development. Architecture and data model are complete. Building out the core tracking UI screens; first release planned for personal use.",
+    cardSkills: ["Expo", "React Native", "SQLite"],
+  },
+
+  {
+    slug: "studyquiz",
+    name: "Studyquiz",
+    tagline: "Keeping four degrees worth of knowledge alive through adaptive AI quizzing.",
+    status: "early-stage",
+    gif: "https://media.giphy.com/media/39xFsr7AByj3errFsw/giphy.gif",
+    accent: {
+      border: "border-amber-500",
+      bg: "bg-amber-900/30",
+      text: "text-amber-300",
+      badge: "bg-amber-900/40 text-amber-300",
+      dot: "bg-amber-500",
+      cardBg: "bg-amber-950",
+    },
+    description: `I have four degrees and have completed roughly 150 university courses — economics, history of art, psychology, philosophy, mathematics. That's a lot of knowledge to accumulate. The problem is that without active retrieval, it fades. A year after finishing a course, I can recall the broad strokes but lose the detail that made it interesting.
+
+I built Studyquiz to fight the forgetting curve. It ingests my actual course materials — PDFs, lecture notes, images — and generates quizzes at exactly the right difficulty level based on how I've been performing. The system knows which subjects I'm weak on and weights its questions accordingly. For my art history courses, it pulls up actual images and asks me to identify the work, the artist, the period.
+
+This is knowledge I paid for with years of study. I want it to stay with me.`,
+    features: [
+      "Ingests PDFs, documents, and images — parses, chunks, and stores them by subject automatically",
+      "Generates quizzes across 7 difficulty levels from pure recall to synthesis and edge cases",
+      "Art history mode: shows images for visual identification using Claude Vision",
+      "Tracks per-subject performance in SQLite and weights future questions toward weaker areas",
+      "Session continuity — progress survives server restarts and returns to where you left off",
+      "Semantic retrieval via ChromaDB — finds relevant material by meaning, not just keyword match",
+    ],
+    techStack: [
+      { name: "Python + Flask", reason: "Lightweight local server, no build step — runs on any machine without deployment complexity" },
+      { name: "ChromaDB", reason: "Local vector database for semantic search — finds relevant content chunks by meaning, not just keywords" },
+      { name: "SQLite", reason: "Zero-config local database for tracking per-subject progress and quiz sessions across restarts" },
+      { name: "Claude API", reason: "Quiz generation across 7 difficulty levels, plus Vision API for identifying art images by sight" },
+    ],
+    skills: [
+      "AI prompt engineering for adaptive difficulty scaling",
+      "Semantic search with vector embeddings (ChromaDB)",
+      "Multi-modal AI integration (text + image analysis)",
+      "Progress tracking data modeling across hundreds of subjects",
+      "Local-first architecture — no cloud dependency, fully offline",
+      "Document ingestion pipeline (PDF, DOCX, images)",
+    ],
+    links: {},
+    progress: "In progress — core ingestion and quiz engine are working. Currently improving subject classification accuracy and adding spaced repetition scheduling.",
+    cardSkills: ["Claude API", "ChromaDB", "Python"],
+  },
+
+  {
+    slug: "retreat-architect",
+    name: "Retreat Architect",
+    tagline: "Design your own meditation retreat, then surrender to it completely.",
+    status: "early-stage",
+    gif: "https://media.giphy.com/media/H7kfFDvD9HSYGRbvid/giphy.gif",
+    accent: {
+      border: "border-emerald-500",
+      bg: "bg-emerald-900/30",
+      text: "text-emerald-300",
+      badge: "bg-emerald-900/40 text-emerald-300",
+      dot: "bg-emerald-500",
+      cardBg: "bg-emerald-950",
+    },
+    description: `I practice Vipassana meditation in the Goenka tradition, which involves silent retreats with a very specific daily structure: early morning wake bells, sitting meditation sessions, walking periods, rest, and a dhamma discourse in the evening. Running a personal retreat — even just for a few days — means managing an exact sequence of audio cues, announcements, and practice instructions that has to work flawlessly without supervision.
+
+The apps I found were either too general or too rigid. I wanted to design my own retreat schedule — choosing which practices to include, how to proportion sitting time, which dhamma content to draw from — and then lock it in for live mode, where everything runs on autopilot. The design principle came first: act as the architect, then become the retreatant.
+
+The result is a cross-platform tool that runs on iOS and Android. You configure the retreat with a setup wizard, tweak the schedule with a drag-and-drop editor, generate all the spoken announcements with TTS, and then enter live mode — which is fully offline, fully automatic, and impossible to accidentally break.`,
+    features: [
+      "6-step setup wizard: duration, wake time, practices, proportions, constraints, and Spotify integration",
+      "Drag-and-drop schedule editor with hard and soft constraint validation",
+      "Pre-generates all spoken announcements via OpenAI TTS at lock time — live mode runs fully offline",
+      "Dharma content library with teachings organized by day, topic, and tradition source",
+      "Web Audio API bell synthesis — no audio files needed, works offline",
+      "Cross-platform iOS/Android via Capacitor; Progressive Web App on desktop",
+    ],
+    techStack: [
+      { name: "React + Vite + TypeScript", reason: "Fast iteration; TypeScript enforces constraint logic correctness at compile time" },
+      { name: "Capacitor", reason: "Wraps the web app as a native iOS/Android app — one codebase, cross-platform" },
+      { name: "OpenAI TTS", reason: "Pre-generates all spoken announcements before the retreat begins so live mode is 100% offline" },
+      { name: "Zustand", reason: "Minimal state management for retreat config and live mode sequence state" },
+      { name: "Web Audio API", reason: "Synthesizes meditation bells directly in the browser — no audio files needed, works offline" },
+    ],
+    skills: [
+      "Constraint-based scheduling system design (hard vs soft constraints)",
+      "Cross-platform mobile deployment (iOS/Android via Capacitor)",
+      "Offline-first architecture with audio pre-generation and IndexedDB caching",
+      "Real-time sequence state machines for live retreat execution",
+      "Audio synthesis with Web Audio API",
+      "UX design for contemplative and focused contexts",
+    ],
+    links: {},
+    progress: "In progress — core scheduling and live mode are working. Currently redesigning the UI and improving Spotify integration.",
+    cardSkills: ["React", "Capacitor", "OpenAI TTS"],
   },
 ];
 
