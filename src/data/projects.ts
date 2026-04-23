@@ -17,7 +17,7 @@ export const projects: Project[] = [
       dot: "bg-violet-500",
       cardBg: "bg-violet-950",
     },
-    description: `I love karaoke, but my song list was a mess — a flat note in my phone with hundreds of songs I could never find in the right moment. What I actually needed was organization by mood, not alphabetical order. "I'm feeling playful and high energy" should surface completely different songs than "I'm feeling nostalgic and want to belt something emotional."
+    description: `I love karaoke, and have so many songs in my songlist — but while listening to others I could never figure out what I would want to sing that would fit my mood. I tried Spotify, tried simple notes, but could never find the right song in the right moment.
 
 I built Karaoke Brain as a mood-organized song management system. You define your own moods with custom names and accent colors, curate your songs into each, and at karaoke night you pick the vibe you're in and get your options instantly. No scrolling through hundreds of songs looking for the one that fits.
 
@@ -45,7 +45,7 @@ The app also solves a practical karaoke problem: before you go up and request a 
       "Dynamic UI theming based on user-defined categories",
     ],
     links: {},
-    progress: "Active. Planned additions: song performance rating (track which ones landed at the bar), collaborative list sharing for group karaoke nights.",
+    progress: "Active. Planned additions: integration of other sources beyond Spotify, collaborative list sharing for group karaoke nights.",
     cardSkills: ["Next.js", "Spotify API", "TailwindCSS 4"],
   },
 
@@ -53,7 +53,7 @@ The app also solves a practical karaoke problem: before you go up and request a 
     slug: "mv-app",
     name: "Retention Intelligence",
     tagline: "AI-powered subscriber analytics that turns churn signals into founder briefs.",
-    status: "active",
+    status: "early-stage",
     gif: "https://media.giphy.com/media/xUA7aSvAOa9GpY18hG/giphy.gif",
     accent: {
       border: "border-teal-500",
@@ -90,7 +90,7 @@ The design constraint that shaped everything: it had to work for non-technical f
       "Behavioral segmentation and archetype modeling",
     ],
     links: {},
-    progress: "Active within the edtech program context. Delivers weekly briefs on a regular cadence.",
+    progress: "Working prototype, currently on the shelf. The pipeline is built and functional — delivered weekly briefs within an edtech program. Available to reactivate.",
     cardSkills: ["Claude API", "Airtable", "Vanilla JS"],
   },
 
@@ -108,7 +108,7 @@ The design constraint that shaped everything: it had to work for non-technical f
       dot: "bg-rose-500",
       cardBg: "bg-rose-950",
     },
-    description: `I'm in polyamorous relationships, which means more people, more complexity, and more potential for recurring patterns of conflict to go unaddressed. I've studied Nonviolent Communication (NVC) and find it genuinely useful — but in the heat of conflict, it's hard to hold the framework in mind while also feeling the feelings.
+    description: `Any relationship has conflicts — and the more people are involved, the more complex it gets. I've studied Nonviolent Communication (NVC) and find it genuinely useful — but in the heat of conflict, it's hard to hold the framework in mind while also feeling the feelings.
 
 I built Conflict Soup to create a space for structured conflict processing outside the moment of conflict itself. The idea is that you log incidents when they happen — messy and emotionally raw — and the system immediately offers an NVC rewrite: the same situation described in terms of observations, feelings, needs, and requests. Over time, patterns emerge across incidents. Issues cluster. The tool helps you see which themes keep appearing.
 
@@ -135,13 +135,13 @@ When it's time to actually address something, the app facilitates a structured r
       "Audit logging for data integrity in personal records",
     ],
     links: {},
-    progress: "Active and in regular use. Planned next: mobile-responsive improvements, recurring pattern visualization, and notifications for unresolved issues.",
+    progress: "Active and in regular use. Planned next: mobile-responsive improvements and recurring pattern visualization.",
     cardSkills: ["Next.js", "Supabase", "OpenAI"],
   },
 
   {
     slug: "journaling",
-    name: "Lifebook Journaling System",
+    name: "Journaling System",
     tagline: "A five-level journaling hierarchy that connects every day to a larger intention.",
     status: "utility",
     gif: "https://media.giphy.com/media/lHQP1QlRMru2Qz6uye/giphy.gif",
@@ -153,14 +153,12 @@ When it's time to actually address something, the app facilitates a structured r
       dot: "bg-amber-500",
       cardBg: "bg-amber-950",
     },
-    description: `I follow the Lifebook methodology, which organizes life into ten categories — health, emotional life, relationships, spirituality, career, and more — each with a vision, a purpose, and a strategy. Maintaining that kind of structured intentionality across daily life requires a system that's both flexible and consistent. Most journaling apps are neither.
-
-I built my journaling system on Obsidian because I wanted full ownership of my data and full control over the structure. The system works in five levels: daily notes pull their priorities from the weekly note, which was seeded from the monthly, which came from the quarterly, which came from the yearly vision. Each level aggregates information upward via DataviewJS — weekly reflections roll into monthly summaries, monthly into quarterly, automatically surfacing patterns without manual compilation.
+    description: `I built my journaling system on Obsidian because I wanted full ownership of my data and full control over the structure. The system works in five levels: daily notes pull their priorities from the weekly note, which was seeded from the monthly, which came from the quarterly, which came from the yearly vision. Each level aggregates information upward via DataviewJS — weekly reflections roll into monthly summaries, monthly into quarterly, automatically surfacing patterns without manual compilation.
 
 The result is a journaling practice that feels coherent: every day connects to every week, every week to a monthly intention, every month to a larger vision for the year. The system also includes an archival companion (Obsidian Archive) that keeps the vault clean over time, moving old notes into dated folders without disrupting the structure or losing anything.`,
     features: [
       "Five-level hierarchy: daily → weekly → monthly → quarterly → yearly, each level seeded from the one above",
-      "Ten Lifebook categories tracked consistently across all levels (health, relationships, career, spirituality, and more)",
+      "Ten life categories tracked consistently across all levels (health, relationships, career, spirituality, and more)",
       "Automated template generation via Templater: new notes pull context from parent-level notes at creation time",
       "DataviewJS aggregations push data upward: events, achievements, insights, and #improve tags surface automatically",
       "Mood, sleep, and energy sparklines at monthly level — visual trends without manual data entry",
@@ -175,7 +173,7 @@ The result is a journaling practice that feels coherent: every day connects to e
     skills: [
       "Hierarchical data architecture with bidirectional information flow",
       "Automation scripting within knowledge management systems",
-      "Lifebook methodology implementation across five time horizons",
+      "Life categories framework implementation across five time horizons",
       "DataviewJS query design for complex aggregation across hundreds of notes",
       "Archival system design for long-term knowledge preservation",
       "Personal data integrity — zero cloud dependency, full local ownership",
@@ -323,7 +321,7 @@ The bot is deployed and running on Fly.io in production. Team members add "cases
     slug: "todoist-ai",
     name: "Todoist AI Assistant",
     tagline: "Manage your tasks in natural language — Gemini translates your words into Todoist actions.",
-    status: "active",
+    status: "early-stage",
     gif: "https://media.giphy.com/media/kLOkqcrdC5mrCE7k7G/giphy.gif",
     accent: {
       border: "border-red-500",
@@ -356,7 +354,7 @@ I built a conversational CLI that wraps the Todoist API with a Gemini-powered na
       "REST API integration with structured output parsing",
     ],
     links: {},
-    progress: "Active and in daily use. The image input feature is particularly useful for converting handwritten planning sessions into Todoist tasks.",
+    progress: "No longer actively used — Todoist released a native voice/ramble feature that covers the core use case. The tool is built and working; the architecture pattern (natural language → API actions) is reusable.",
     cardSkills: ["Google Gemini", "Todoist API", "Node.js"],
   },
 
@@ -378,7 +376,7 @@ I built a conversational CLI that wraps the Todoist API with a Gemini-powered na
     },
     description: `Cycle tracking apps tend to fall into two camps: the ones designed around fertility and medical outcomes, and the ones so minimal they're just a period calendar. I wanted something different — a highly customizable daily logging tool built around the idea that every cycle is unique and worth understanding in detail.
 
-The app is inspired by Clue's icon-based UX: big, satisfying icons to tap, no free-text walls, clean structured input. But unlike Clue, everything is customizable. You define the categories, the tracking items, and what kind of input each uses — binary yes/no, intensity 1-5, single choice, multi-select, numeric, count, or duration. Sleep quality, mood shifts, energy patterns, specific habits — whatever matters in your cycle, you can track it.
+The design is icon-based: big, satisfying icons to tap, no free-text walls, clean structured input. Everything is customizable. You define the categories, the tracking items, and what kind of input each uses — binary yes/no, intensity 1-5, single choice, multi-select, numeric, count, or duration. Sleep quality, mood shifts, energy patterns, specific habits — whatever matters in your cycle, you can track it.
 
 Privacy comes first by design. All data lives on-device in SQLite by default. No account required, no cloud, nothing leaves your phone unless you choose to sync. When you want a second lens on your patterns, optional AI observations are available — using your own API key or a custom-compatible endpoint.`,
     features: [
@@ -422,7 +420,7 @@ Privacy comes first by design. All data lives on-device in SQLite by default. No
       dot: "bg-amber-500",
       cardBg: "bg-amber-950",
     },
-    description: `I have four degrees and have completed roughly 150 university courses — economics, history of art, psychology, philosophy, mathematics. That's a lot of knowledge to accumulate. The problem is that without active retrieval, it fades. A year after finishing a course, I can recall the broad strokes but lose the detail that made it interesting.
+    description: `I have four degrees and have completed roughly 150 university courses — economics, history of art, psychology, philosophy, mathematics, you name it. That's a lot of knowledge to accumulate. The problem is that without active retrieval, it fades. A year after finishing a course, I can recall the broad strokes but lose the detail that made it interesting.
 
 I built Studyquiz to fight the forgetting curve. It ingests my actual course materials — PDFs, lecture notes, images — and generates quizzes at exactly the right difficulty level based on how I've been performing. The system knows which subjects I'm weak on and weights its questions accordingly. For my art history courses, it pulls up actual images and asks me to identify the work, the artist, the period.
 
@@ -468,16 +466,16 @@ This is knowledge I paid for with years of study. I want it to stay with me.`,
       dot: "bg-emerald-500",
       cardBg: "bg-emerald-950",
     },
-    description: `I practice Vipassana meditation in the Goenka tradition, which involves silent retreats with a very specific daily structure: early morning wake bells, sitting meditation sessions, walking periods, rest, and a dhamma discourse in the evening. Running a personal retreat — even just for a few days — means managing an exact sequence of audio cues, announcements, and practice instructions that has to work flawlessly without supervision.
+    description: `I like to meditate and enjoy mixing and matching different styles according to my needs. Running a personal retreat — even just for a few days — means managing an exact sequence of audio cues, guided sessions, and practice instructions that has to work flawlessly without supervision.
 
-The apps I found were either too general or too rigid. I wanted to design my own retreat schedule — choosing which practices to include, how to proportion sitting time, which dhamma content to draw from — and then lock it in for live mode, where everything runs on autopilot. The design principle came first: act as the architect, then become the retreatant.
+The apps I found were either too general or too rigid. I wanted to design my own retreat schedule — choosing which practices to include, how to proportion sitting time — and then lock it in for live mode, where everything runs on autopilot. The design principle came first: act as the architect, then become the retreatant.
 
 The result is a cross-platform tool that runs on iOS and Android. You configure the retreat with a setup wizard, tweak the schedule with a drag-and-drop editor, generate all the spoken announcements with TTS, and then enter live mode — which is fully offline, fully automatic, and impossible to accidentally break.`,
     features: [
       "6-step setup wizard: duration, wake time, practices, proportions, constraints, and Spotify integration",
       "Drag-and-drop schedule editor with hard and soft constraint validation",
       "Pre-generates all spoken announcements via OpenAI TTS at lock time — live mode runs fully offline",
-      "Dharma content library with teachings organized by day, topic, and tradition source",
+      "Guided session library with content organized by practice style, duration, and theme",
       "Web Audio API bell synthesis — no audio files needed, works offline",
       "Cross-platform iOS/Android via Capacitor; Progressive Web App on desktop",
     ],
