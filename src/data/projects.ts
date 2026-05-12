@@ -362,7 +362,7 @@ The bot is deployed and running on Fly.io in production. Team members add cases 
     slug: "todoist-ai",
     name: "Todoist AI Assistant",
     tagline: "Manage your tasks in natural language — Gemini translates your words into Todoist actions.",
-    status: "early-stage",
+    status: "active",
     gif: "https://media.giphy.com/media/kLOkqcrdC5mrCE7k7G/giphy.gif",
     accent: {
       border: "border-red-500",
@@ -457,7 +457,7 @@ The insights layer goes beyond charts: it identifies recurring charges, computes
     slug: "cyclic-life",
     name: "Cyclic Life",
     tagline: "A private, beautifully customizable cycle tracking app built for nuance.",
-    status: "early-stage",
+    status: "active",
     gif: "https://media.giphy.com/media/3oEjHNHGf0i6OIhJII/giphy.gif",
     accent: {
       border: "border-pink-500",
@@ -495,7 +495,7 @@ Privacy comes first by design. All data lives on-device in SQLite by default. No
       "Privacy-first data architecture (local-first, optional sync)",
     ],
     links: {},
-    progress: "In development. Architecture and data model are complete. Building out the core tracking UI screens; first release planned for personal use.",
+    progress: "Complete and in personal use.",
     cardSkills: ["Expo", "React Native", "SQLite"],
   },
 
