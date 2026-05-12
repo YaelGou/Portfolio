@@ -44,7 +44,7 @@ The app also solves a practical karaoke problem: before you go up and request a 
       "Progressive Web App configuration",
       "Dynamic UI theming based on user-defined categories",
     ],
-    links: {},
+    links: { live: "https://karaoke-brain.vercel.app/" },
     progress: "Active. Planned additions: integration of other sources beyond Spotify, collaborative list sharing for group karaoke nights.",
     cardSkills: ["Next.js", "Spotify API", "TailwindCSS 4"],
   },
@@ -89,7 +89,7 @@ The design constraint that shaped everything: it had to work for non-technical f
       "Human-centered analytics dashboard design",
       "Behavioral segmentation and archetype modeling",
     ],
-    links: {},
+    links: { live: "https://5twto.github.io/mv_application/index.html" },
     progress: "Complete. Delivered weekly briefs within an edtech program. Currently on the shelf — available to reactivate.",
     cardSkills: ["Claude API", "Airtable", "Vanilla JS"],
   },
@@ -401,6 +401,54 @@ Two features I find especially useful: templates and calendar photo input. When 
     links: {},
     progress: "No longer actively used — Todoist released a native voice/ramble feature that covers the core use case. The tool is built and working; the architecture pattern (natural language → API actions) is reusable.",
     cardSkills: ["Google Gemini", "Todoist API", "Node.js"],
+  },
+
+  {
+    slug: "finance-dashboard",
+    name: "Finance Dashboard",
+    tagline: "A fully local personal finance dashboard — bank CSVs in, spending intelligence out.",
+    status: "active",
+    gif: "https://media.giphy.com/media/xUA7aSvAOa9GpY18hG/giphy.gif",
+    accent: {
+      border: "border-green-500",
+      bg: "bg-green-900/30",
+      text: "text-green-300",
+      badge: "bg-green-900/40 text-green-300",
+      dot: "bg-green-500",
+      cardBg: "bg-green-950",
+    },
+    description: `Every bank lets you export a CSV. Nobody actually analyzes them, because turning raw transaction data into useful insight requires a lot of work — categorizing, deduplicating, identifying recurring charges, and comparing trends over time. Cloud tools do this but at the cost of handing over your complete financial history to a third party.
+
+I built a fully local alternative. The dashboard runs on your machine, stores data in SQLite on iCloud Drive (so it syncs to iPhone without any server), and never sends anything anywhere. You drop in a CSV export from your bank or PayPal, and the importer auto-detects the format — European or US date styles, comma or semicolon delimiters, PayPal's specific schema — and categorizes everything automatically using a rule-based engine you can tune with your own keywords.
+
+The insights layer goes beyond charts: it identifies recurring charges, computes a monthly breakdown versus the previous month, tracks savings goals, and generates a weekly summary with an honest verdict on your spending patterns.`,
+    features: [
+      "Auto-detects bank CSV format: EU/US date styles, comma/semicolon delimiters, PayPal schema",
+      "Rule-based categorizer with 10 categories + custom work keyword matching",
+      "Recurring transaction detection across months",
+      "Weekly summary with plain-language 'honest verdict' on spending patterns",
+      "Monthly breakdown with vs-last-month comparisons",
+      "Savings goals tracking",
+      "PWA: installable on iPhone via Safari, accessible over local WiFi",
+      "Zero cloud dependency — SQLite in iCloud Drive for sync, nothing leaves the machine",
+    ],
+    techStack: [
+      { name: "Python + FastAPI", reason: "Lightweight local server with clean REST endpoints — no deployment complexity, runs instantly" },
+      { name: "SQLAlchemy + SQLite", reason: "Relational schema for transactions, categories, and goals; database lives in iCloud Drive for automatic sync" },
+      { name: "Vanilla JS/CSS", reason: "Single HTML file, no build step, no CDN dependencies — opens in any browser instantly" },
+      { name: "PWA (service worker)", reason: "Cache-first shell, network-first API — installable on iPhone and works over local WiFi" },
+    ],
+    skills: [
+      "Multi-format CSV parsing with automatic format detection",
+      "Rule-based transaction categorization engine",
+      "Recurring charge detection algorithm across time series data",
+      "Local-first architecture with iCloud Drive as the sync layer",
+      "PWA design for mobile access without app store distribution",
+      "Personal finance data modeling (accounts, categories, goals, recurrences)",
+    ],
+    links: {},
+    progress: "Complete and in personal use. Known gaps: no multi-currency conversion, goal currency defaults to EUR.",
+    cardSkills: ["Python", "FastAPI", "SQLite"],
   },
 
   // ── In Progress (featured first) ──────────────────────────────────────────

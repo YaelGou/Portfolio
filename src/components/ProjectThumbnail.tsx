@@ -431,6 +431,52 @@ function AiChatAppThumb({ className }: ThumbProps) {
   );
 }
 
+function FinanceDashboardThumb({ className }: ThumbProps) {
+  return (
+    <svg viewBox="0 0 280 140" fill="none" xmlns="http://www.w3.org/2000/svg" className={className}>
+      {/* Top stat cards */}
+      <rect x="16" y="14" width="58" height="30" rx="4" fill="white" stroke="#15803D" strokeWidth="1" opacity="0.5"/>
+      <rect x="22" y="20" width="28" height="2" rx="1" fill="#15803D" opacity="0.3"/>
+      <rect x="22" y="27" width="40" height="3.5" rx="1.75" fill="#15803D" opacity="0.65"/>
+      <rect x="82" y="14" width="58" height="30" rx="4" fill="white" stroke="#15803D" strokeWidth="1" opacity="0.5"/>
+      <rect x="88" y="20" width="24" height="2" rx="1" fill="#15803D" opacity="0.3"/>
+      <rect x="88" y="27" width="40" height="3.5" rx="1.75" fill="#15803D" opacity="0.5"/>
+      <rect x="148" y="14" width="58" height="30" rx="4" fill="white" stroke="#15803D" strokeWidth="1" opacity="0.5"/>
+      <rect x="154" y="20" width="32" height="2" rx="1" fill="#15803D" opacity="0.3"/>
+      <rect x="154" y="27" width="36" height="3.5" rx="1.75" fill="#15803D" opacity="0.4"/>
+      {/* Savings goal bar */}
+      <rect x="214" y="14" width="52" height="30" rx="4" fill="white" stroke="#15803D" strokeWidth="1" opacity="0.5"/>
+      <rect x="220" y="20" width="28" height="2" rx="1" fill="#15803D" opacity="0.3"/>
+      <rect x="220" y="27" width="40" height="3" rx="1.5" fill="#DCFCE7" opacity="0.8"/>
+      <rect x="220" y="27" width="26" height="3" rx="1.5" fill="#15803D" opacity="0.6"/>
+      {/* Bar chart */}
+      <rect x="16" y="52" width="146" height="76" rx="4" fill="white" stroke="#15803D" strokeWidth="1" opacity="0.4"/>
+      {[0,1,2,3,4].map(i => {
+        const heights = [38, 24, 44, 30, 20];
+        const opacities = [0.7, 0.4, 0.85, 0.55, 0.35];
+        return (
+          <rect key={i} x={26 + i * 24} y={120 - heights[i]} width="14" height={heights[i]} rx="2"
+            fill="#15803D" opacity={opacities[i]}/>
+        );
+      })}
+      <line x1="16" y1="120" x2="162" y2="120" stroke="#15803D" strokeWidth="0.75" opacity="0.2"/>
+      {/* Category breakdown */}
+      <rect x="170" y="52" width="96" height="76" rx="4" fill="white" stroke="#15803D" strokeWidth="1" opacity="0.4"/>
+      <rect x="178" y="60" width="24" height="3" rx="1.5" fill="#15803D" opacity="0.3"/>
+      {[0,1,2,3,4].map(i => {
+        const widths = [72, 52, 64, 38, 28];
+        const ops = [0.7, 0.5, 0.6, 0.35, 0.25];
+        return (
+          <g key={i}>
+            <rect x="178" y={70 + i * 11} width="80" height="3" rx="1.5" fill="#DCFCE7" opacity="0.6"/>
+            <rect x="178" y={70 + i * 11} width={widths[i]} height="3" rx="1.5" fill="#15803D" opacity={ops[i]}/>
+          </g>
+        );
+      })}
+    </svg>
+  );
+}
+
 // Placeholder for projects not yet added
 function DefaultThumb({ className }: ThumbProps) {
   return (
@@ -454,6 +500,7 @@ const thumbnails: Record<string, (props: ThumbProps) => React.ReactElement> = {
   "friend-crm": FriendCrmThumb,
   "vsdx-transformer": VsdxTransformerThumb,
   "vsdx-translator": VsdxTranslatorThumb,
+  "finance-dashboard": FinanceDashboardThumb,
   "slack-kb-bot": SlackKbBotThumb,
   "todoist-ai": TodoistAiThumb,
   "ai-chat-app": AiChatAppThumb,
