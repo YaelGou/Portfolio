@@ -272,7 +272,7 @@ The tool converts images (JPEG/PNG) one has after the Workshop into actual edita
     name: "Diagram Translator",
     tagline: "Translates entire Visio diagram libraries into 6+ languages — 85–95% fewer API calls.",
     status: "active",
-    gif: "https://media.giphy.com/media/xUA7aSvAOa9GpY18hG/giphy.gif",
+    gif: "https://media.giphy.com/media/3o6vXLMQP2SQluZHgs/giphy.gif",
     accent: {
       border: "border-purple-500",
       bg: "bg-purple-900/30",
@@ -408,7 +408,7 @@ Two features I find especially useful: templates and calendar photo input. When 
     name: "Finance Dashboard",
     tagline: "A fully local personal finance dashboard — bank CSVs in, spending intelligence out.",
     status: "active",
-    gif: "https://media.giphy.com/media/xUA7aSvAOa9GpY18hG/giphy.gif",
+    gif: "https://media.giphy.com/media/xTiTnqUxyWbsAXq7Ju/giphy.gif",
     accent: {
       border: "border-green-500",
       bg: "bg-green-900/30",
