@@ -53,7 +53,7 @@ The app also solves a practical karaoke problem: before you go up and request a 
     slug: "mv-app",
     name: "Retention Intelligence",
     tagline: "AI-powered subscriber analytics that turns churn signals into founder briefs.",
-    status: "early-stage",
+    status: "active",
     gif: "https://media.giphy.com/media/xUA7aSvAOa9GpY18hG/giphy.gif",
     accent: {
       border: "border-teal-500",
@@ -90,14 +90,14 @@ The design constraint that shaped everything: it had to work for non-technical f
       "Behavioral segmentation and archetype modeling",
     ],
     links: {},
-    progress: "Working prototype, currently on the shelf. The pipeline is built and functional — delivered weekly briefs within an edtech program. Available to reactivate.",
+    progress: "Complete. Delivered weekly briefs within an edtech program. Currently on the shelf — available to reactivate.",
     cardSkills: ["Claude API", "Airtable", "Vanilla JS"],
   },
 
   {
     slug: "conflict-soup",
     name: "Conflict Soup",
-    tagline: "A structured space for processing conflict in polyamorous relationships.",
+    tagline: "A structured space for processing conflict in close relationships.",
     status: "active",
     gif: "https://media.giphy.com/media/ecd4TvE96YkIQuP5XI/giphy.gif",
     accent: {
@@ -114,7 +114,7 @@ I built Conflict Soup to create a space for structured conflict processing outsi
 
 When it's time to actually address something, the app facilitates a structured resolution session: a focused conversation about a specific issue that ends with a concrete, mutual agreement on record. The goal isn't to eliminate conflict — it's to make conflict a place where relationships can grow instead of erode.`,
     features: [
-      "Relationship units: create dyads, triads, or poly networks with consent-based membership",
+      "Relationship units: create dyads, triads, or multi-person groups with named members",
       "Incident tracking with immutable original text — the raw account is always preserved",
       "AI-powered NVC rewrites using the OFNR framework (Observations, Feelings, Needs, Requests)",
       "Issue clustering: link incidents to recurring themes with AI-assisted suggestions",
@@ -227,9 +227,9 @@ The tool stores data in Excel so I can open and edit it directly without the CLI
   },
 
   {
-    slug: "vsdx-processor",
-    name: "VSDX AI Diagram Processor",
-    tagline: "Converts images to editable Visio diagrams and translates existing ones — 85% fewer API calls.",
+    slug: "vsdx-transformer",
+    name: "Diagram Digitizer",
+    tagline: "Converts workshop whiteboard photos into editable .vsdx diagrams using AI vision.",
     status: "active",
     gif: "https://media.giphy.com/media/p9WGfmQMEENR9zRmCO/giphy.gif",
     accent: {
@@ -240,23 +240,19 @@ The tool stores data in Excel so I can open and edit it directly without the CLI
       dot: "bg-indigo-500",
       cardBg: "bg-indigo-950",
     },
-    description: `Teams that maintain large libraries of process diagrams face a painful problem when going multilingual: translating every diagram means opening each file, editing every text shape, and repeating across 6+ languages. With dozens of diagrams, the scope is enormous and the work is entirely mechanical.
+    description: `Teams that run workshops often end up with whiteboards full of process diagrams that need to live in Visio. The options are to redraw everything manually, or photograph the board and hope someone has time to reconstruct it. Neither is good.
 
-I built a two-mode toolkit. The first mode converts image-based diagrams (JPEG/PNG) into actual editable .vsdx files: GPT-4o runs a three-pass vision pipeline — detecting shapes, extracting text, finding connectors — then maps percentage-based positions to VSDX coordinate space and assembles a final file using your actual template shapes.
-
-The second mode batch-translates existing .vsdx files. Instead of translating shape by shape (one API call each), it groups all text per page, reduces calls by 85–95%, and writes the translated text back into the correct XML nodes in the VSDX structure. Both modes work directly on the ZIP/XML internals of the VSDX format.`,
+The tool converts images (JPEG/PNG) one has after the Workshop into actual editable .vsdx files. GPT-4o runs a three-pass vision pipeline — detecting shapes, extracting text, finding connectors — then maps percentage-based positions to VSDX coordinate space and assembles a final file using your actual template shapes. No redrawing, no Visio license required.`,
     features: [
       "Convert JPEG/PNG diagrams to editable .vsdx files — no manual redrawing",
       "Three-pass AI vision pipeline: shape detection → text extraction → connector mapping",
       "Matches detected shapes to a user-provided template catalog with position mapping",
-      "Translate existing .vsdx diagrams into 6+ languages",
-      "Batch translation groups all text per page — 85–95% fewer API calls than shape-by-shape",
+      "Percentage-based position mapping to VSDX coordinate space",
       "Operates directly on VSDX internals (ZIP + XML) — no GUI or Visio license required",
     ],
     techStack: [
       { name: "JavaScript (Node.js)", reason: "Fast scripting environment for file I/O pipelines, ZIP manipulation, and XML processing" },
-      { name: "OpenAI GPT-4o", reason: "Vision pipeline for shape detection and text extraction; full-model translation for quality" },
-      { name: "GPT-4o-mini", reason: "Batch translation of grouped text blocks — high throughput at lower cost" },
+      { name: "OpenAI GPT-4o", reason: "Three-pass vision pipeline: shape detection, text extraction, and connector mapping from images" },
       { name: "JSZip + xml2js", reason: "VSDX files are ZIP archives with XML inside — these libraries handle parsing and reassembly" },
       { name: "sharp", reason: "Image preprocessing to normalize input before the vision pipeline" },
     ],
@@ -264,13 +260,56 @@ The second mode batch-translates existing .vsdx files. Instead of translating sh
       "Multi-pass AI vision pipeline design (detect → extract → map)",
       "Binary file format engineering (VSDX ZIP/XML internals)",
       "Coordinate mapping between percentage space and VSDX coordinate space",
-      "Batch API optimization — grouping requests to minimize calls",
       "XML document processing and targeted node manipulation",
-      "Multilingual AI processing across 6+ languages",
     ],
     links: {},
-    progress: "Complete. Both modes (image→VSDX and translate) are working in production. Used to process an existing diagram library.",
+    progress: "Complete. Used to process an existing diagram library.",
     cardSkills: ["GPT-4o Vision", "Node.js", "VSDX/XML"],
+  },
+
+  {
+    slug: "vsdx-translator",
+    name: "Diagram Translator",
+    tagline: "Translates entire Visio diagram libraries into 6+ languages — 85–95% fewer API calls.",
+    status: "active",
+    gif: "https://media.giphy.com/media/xUA7aSvAOa9GpY18hG/giphy.gif",
+    accent: {
+      border: "border-purple-500",
+      bg: "bg-purple-900/30",
+      text: "text-purple-300",
+      badge: "bg-purple-900/40 text-purple-300",
+      dot: "bg-purple-500",
+      cardBg: "bg-purple-950",
+    },
+    description: `Translating a large diagram library into 6+ languages sounds simple until you're doing it: open each file, find every text shape, translate it, repeat. One API call per shape means thousands of calls. The work is entirely mechanical, and the cost adds up fast.
+
+The tool batch-translates existing .vsdx files by grouping all text per page and sending it in a single call, then writing the translations back into the correct XML nodes in the VSDX structure. That reduces API calls by 85–95% compared to shape-by-shape translation. GPT-4o-mini handles high-throughput batches at lower cost; GPT-4o is available where quality matters more.
+
+Both the grouping and the reassembly operate directly on the ZIP/XML internals of the VSDX format — no GUI, no Visio license required.`,
+    features: [
+      "Translate existing .vsdx diagrams into 6+ languages",
+      "Batch translation groups all text per page — 85–95% fewer API calls than shape-by-shape",
+      "GPT-4o-mini for cost-efficient batch translation; GPT-4o for quality-critical content",
+      "Writes translations back into the correct XML nodes in the VSDX structure",
+      "Processes entire diagram libraries in one run",
+      "Operates directly on VSDX internals (ZIP + XML) — no GUI or Visio license required",
+    ],
+    techStack: [
+      { name: "JavaScript (Node.js)", reason: "Fast scripting environment for file I/O pipelines, ZIP manipulation, and XML processing" },
+      { name: "GPT-4o-mini", reason: "Batch translation of grouped text blocks — high throughput at lower cost" },
+      { name: "OpenAI GPT-4o", reason: "Full-model translation for quality-critical diagrams" },
+      { name: "JSZip + xml2js", reason: "VSDX files are ZIP archives with XML inside — these libraries handle parsing and reassembly" },
+    ],
+    skills: [
+      "Batch API optimization — grouping requests to minimize calls",
+      "Binary file format engineering (VSDX ZIP/XML internals)",
+      "XML document processing and targeted node manipulation",
+      "Multilingual AI processing across 6+ languages",
+      "Cost optimization through model selection and request batching",
+    ],
+    links: {},
+    progress: "Complete. Used to process an existing diagram library at scale.",
+    cardSkills: ["GPT-4o-mini", "Node.js", "VSDX/XML"],
   },
 
   {
@@ -287,9 +326,11 @@ The second mode batch-translates existing .vsdx files. Instead of translating sh
       dot: "bg-sky-500",
       cardBg: "bg-sky-950",
     },
-    description: `Teams accumulate knowledge in people's heads, in Slack threads, and in documents nobody can find when they need them. When someone new joins, or when a question comes up that was answered three months ago, that knowledge is effectively gone. I wanted to give teams a dead-simple way to capture what they know and query it conversationally — without leaving Slack.
+    description: `Working on AI meant constant discovery — new tools, new prompting techniques, workflows that worked, patterns worth repeating. The problem was that knowledge lived in whoever's head found it. By the time someone asked a question, the person who knew the answer might not be around, or the thread was buried three months back in Slack.
 
-The bot is deployed and running on Fly.io in production. Team members add "cases" — tools, processes, workflows, recurring situations — via slash commands, no separate UI needed. When anyone @mentions the bot with a question, it embeds the query, runs cosine similarity search against the knowledge base, and feeds the top matches to GPT-4o to compose a grounded answer. The model only uses retrieved context, so answers are backed by what the team has actually documented.`,
+I built the bot specifically to capture AI knowledge as it was being built, not after the fact. The framing of "cases" — discrete, queryable units of knowledge — came from the nature of AI work: each tool, each prompt pattern, each workflow is a distinct thing you want to be able to retrieve later.
+
+The bot is deployed and running on Fly.io in production. Team members add cases via slash commands, no separate UI needed. When anyone @mentions the bot with a question, it embeds the query, runs cosine similarity search against the knowledge base, and feeds the top matches to GPT-4o to compose a grounded answer. The model only uses retrieved context, so answers are backed by what the team has actually documented.`,
     features: [
       "Add knowledge cases via Slack slash commands — no external UI or admin panel",
       "Semantic search: embeds questions and finds relevant cases by cosine similarity",
@@ -331,13 +372,16 @@ The bot is deployed and running on Fly.io in production. Team members add "cases
       dot: "bg-red-500",
       cardBg: "bg-red-950",
     },
-    description: `I use Todoist heavily, but the friction of opening the app, navigating to the right project, setting priorities, and scheduling correctly adds up throughout the day. I'd rather just say what I mean and have the system handle the details.
+    description: `I use Todoist heavily, but the friction of opening the app, navigating to the right project, setting priorities, and scheduling correctly adds up throughout the day. I'd rather just type what I mean and have the system handle the details.
 
-I built a conversational CLI that wraps the Todoist API with a Gemini-powered natural language layer. You type what you want — "add a call with Yoav next Thursday morning, high priority" — and it creates the task with the right properties. I added a custom priority shorthand that maps to my own workflow: 'i:' for internal work, 's:' for self-development, no prefix for client work (always highest priority). The tool also reads images: upload a photo of a whiteboard, a handwritten note, or a schedule and it extracts and creates the tasks automatically.`,
+I built a conversational CLI that wraps the Todoist API with a Gemini-powered natural language layer. You type what you want — "add a call with Yoav next Thursday morning, high priority" — and it creates the task with the right properties. I added a custom priority shorthand that maps to my own workflow: 'i:' for internal work, 's:' for self-development, no prefix for client work (always highest priority).
+
+Two features I find especially useful: templates and calendar photo input. When you type something like "I have an Adboard on 15.04," the tool recognizes the event type, applies a template that breaks it into standard milestones and deadlines, and asks for confirmation before adding everything. The image input works differently from what you might expect — you photograph your physical calendar or planner, and the tool reads it and creates Todoist tasks for everything already scheduled there, slotting them into the right dates.`,
     features: [
-      "Create, search, update, and complete tasks in natural language",
+      "Create, search, update, and complete tasks in natural language — free text, no voice",
       "Custom priority shorthand: 'i:' internal, 's:' self-work, no prefix = client (highest)",
-      "Image input: upload a photo of a schedule or handwritten list and get Todoist tasks",
+      "Event templates: type 'I have an Adboard on 15.04' and get a full set of milestones and deadlines, confirmed before adding",
+      "Calendar photo input: photograph your physical planner and the tool inserts all existing events and plans into Todoist",
       "Recurring task scheduling in natural language ('every weekday', 'first Monday of the month')",
       "Conversational context: remembers what you've discussed in a session for follow-ups",
     ],
@@ -349,7 +393,8 @@ I built a conversational CLI that wraps the Todoist API with a Gemini-powered na
     skills: [
       "Natural language interface design for task management",
       "Conversational AI UX — stateful session, follow-up commands",
-      "AI vision for document and handwriting parsing",
+      "Event template system: entity recognition → milestone decomposition → confirmation flow",
+      "AI vision for calendar and planner photo parsing",
       "Custom priority system design and workflow mapping",
       "REST API integration with structured output parsing",
     ],

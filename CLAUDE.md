@@ -28,7 +28,8 @@ Yael's personal portfolio site. A static Next.js 16 site deployed to Cloudflare 
 | journaling | Lifebook Journaling System | amber-800 | Active |
 | cyclic-life | Cyclic Life | pink-700 | In Progress |
 | friend-crm | Friend Reconnection CRM | slate-500 | Active |
-| vsdx-processor | VSDX AI Diagram Processor | indigo-700 | Active |
+| vsdx-transformer | Diagram Digitizer | indigo-700 | Active |
+| vsdx-translator | Diagram Translator | purple-700 | Active |
 | slack-kb-bot | Slack AI Knowledge Base | sky-700 | Active |
 | todoist-ai | Todoist AI Assistant | red-700 | Active |
 | ai-chat-app | AI Chat App | lime-700 | Active |

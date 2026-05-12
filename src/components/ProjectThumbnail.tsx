@@ -252,38 +252,88 @@ function FriendCrmThumb({ className }: ThumbProps) {
   );
 }
 
-function VsdxProcessorThumb({ className }: ThumbProps) {
+function VsdxTransformerThumb({ className }: ThumbProps) {
   return (
     <svg viewBox="0 0 280 140" fill="none" xmlns="http://www.w3.org/2000/svg" className={className}>
-      {/* Source image box */}
-      <rect x="16" y="30" width="72" height="80" rx="5" fill="#EEF2FF" stroke="#4338CA" strokeWidth="1.2" opacity="0.7"/>
-      <rect x="24" y="40" width="56" height="32" rx="3" fill="#4338CA" opacity="0.08"/>
-      {/* Rough shapes inside (image) */}
-      <rect x="28" y="44" width="20" height="14" rx="2" stroke="#4338CA" strokeWidth="1" fill="none" opacity="0.4"/>
-      <line x1="48" y1="50" x2="66" y2="50" stroke="#4338CA" strokeWidth="1" opacity="0.3"/>
-      <rect x="54" y="44" width="20" height="14" rx="2" stroke="#4338CA" strokeWidth="1" fill="none" opacity="0.4"/>
-      <rect x="24" y="82" width="56" height="2" rx="1" fill="#4338CA" opacity="0.2"/>
-      <rect x="24" y="88" width="40" height="2" rx="1" fill="#4338CA" opacity="0.2"/>
-      {/* Arrow + AI */}
-      <path d="M96 70 L118 70" stroke="#4338CA" strokeWidth="1.5" strokeLinecap="round"/>
-      <path d="M114 66 L118 70 L114 74" stroke="#4338CA" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-      <rect x="100" y="58" width="16" height="10" rx="3" fill="#EEF2FF" stroke="#4338CA" strokeWidth="1" opacity="0.7"/>
-      <rect x="104" y="61.5" width="8" height="2" rx="1" fill="#4338CA" opacity="0.5"/>
-      {/* VSDX output box */}
-      <rect x="124" y="20" width="80" height="100" rx="5" fill="white" stroke="#4338CA" strokeWidth="1.5" opacity="0.8"/>
-      <rect x="132" y="32" width="24" height="16" rx="3" fill="#EEF2FF" stroke="#4338CA" strokeWidth="1" opacity="0.7"/>
-      <rect x="164" y="32" width="28" height="16" rx="3" fill="#EEF2FF" stroke="#4338CA" strokeWidth="1" opacity="0.7"/>
-      <line x1="156" y1="40" x2="164" y2="40" stroke="#4338CA" strokeWidth="1.5" strokeLinecap="round"/>
-      <rect x="138" y="60" width="52" height="16" rx="3" fill="#EEF2FF" stroke="#4338CA" strokeWidth="1" opacity="0.7"/>
-      <rect x="144" y="87" width="64" height="8" rx="2" fill="#4338CA" opacity="0.06"/>
-      <rect x="144" y="100" width="52" height="2" rx="1" fill="#4338CA" opacity="0.2"/>
-      {/* Language arrows */}
-      <path d="M212 60 L248 45" stroke="#4338CA" strokeWidth="1" strokeDasharray="3 2" opacity="0.4"/>
-      <path d="M212 70 L248 70" stroke="#4338CA" strokeWidth="1" strokeDasharray="3 2" opacity="0.4"/>
-      <path d="M212 80 L248 95" stroke="#4338CA" strokeWidth="1" strokeDasharray="3 2" opacity="0.4"/>
-      <rect x="248" y="38" width="26" height="12" rx="3" fill="#EEF2FF" stroke="#4338CA" strokeWidth="0.8" opacity="0.6"/>
-      <rect x="248" y="64" width="26" height="12" rx="3" fill="#EEF2FF" stroke="#4338CA" strokeWidth="0.8" opacity="0.6"/>
-      <rect x="248" y="90" width="26" height="12" rx="3" fill="#EEF2FF" stroke="#4338CA" strokeWidth="0.8" opacity="0.6"/>
+      {/* Photo source — rough/sketchy feel */}
+      <rect x="14" y="26" width="74" height="88" rx="4" fill="#EEF2FF" stroke="#4338CA" strokeWidth="1.2" opacity="0.6"/>
+      <circle cx="24" cy="36" r="4" fill="#4338CA" opacity="0.15"/>
+      {/* Rough sketch shapes inside photo */}
+      <path d="M28 58 L48 44 L70 58" stroke="#4338CA" strokeWidth="1" fill="none" opacity="0.3" strokeLinejoin="round"/>
+      <rect x="26" y="62" width="26" height="18" rx="2" stroke="#4338CA" strokeWidth="1" fill="none" opacity="0.35"/>
+      <ellipse cx="62" cy="71" rx="14" ry="10" stroke="#4338CA" strokeWidth="1" fill="none" opacity="0.3"/>
+      <line x1="52" y1="71" x2="48" y2="71" stroke="#4338CA" strokeWidth="1" opacity="0.25" strokeDasharray="2 2"/>
+      <rect x="26" y="90" width="56" height="2" rx="1" fill="#4338CA" opacity="0.15"/>
+      <rect x="26" y="97" width="40" height="2" rx="1" fill="#4338CA" opacity="0.1"/>
+      {/* 3-pass pipeline indicator */}
+      <circle cx="106" cy="54" r="5" fill="#4338CA" opacity="0.2"/>
+      <rect x="103" y="52.5" width="6" height="2" rx="1" fill="#4338CA" opacity="0.5"/>
+      <circle cx="106" cy="70" r="5" fill="#4338CA" opacity="0.5"/>
+      <rect x="103" y="68.5" width="6" height="2" rx="1" fill="#4338CA" opacity="0.7"/>
+      <circle cx="106" cy="86" r="5" fill="#4338CA" opacity="0.3"/>
+      <rect x="103" y="84.5" width="6" height="2" rx="1" fill="#4338CA" opacity="0.45"/>
+      <line x1="106" y1="59" x2="106" y2="65" stroke="#4338CA" strokeWidth="1" opacity="0.3"/>
+      <line x1="106" y1="75" x2="106" y2="81" stroke="#4338CA" strokeWidth="1" opacity="0.3"/>
+      {/* Arrow */}
+      <path d="M116 70 L128 70" stroke="#4338CA" strokeWidth="1.5" strokeLinecap="round"/>
+      <path d="M124 66 L128 70 L124 74" stroke="#4338CA" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+      {/* Clean VSDX output */}
+      <rect x="132" y="16" width="136" height="108" rx="5" fill="white" stroke="#4338CA" strokeWidth="1.5" opacity="0.8"/>
+      <rect x="142" y="28" width="38" height="22" rx="3" fill="#EEF2FF" stroke="#4338CA" strokeWidth="1.2" opacity="0.8"/>
+      <rect x="148" y="36" width="26" height="2.5" rx="1.25" fill="#4338CA" opacity="0.5"/>
+      <rect x="188" y="28" width="38" height="22" rx="3" fill="#EEF2FF" stroke="#4338CA" strokeWidth="1.2" opacity="0.8"/>
+      <rect x="194" y="36" width="26" height="2.5" rx="1.25" fill="#4338CA" opacity="0.5"/>
+      <line x1="180" y1="39" x2="188" y2="39" stroke="#4338CA" strokeWidth="1.5" strokeLinecap="round"/>
+      <rect x="165" y="64" width="54" height="22" rx="3" fill="#EEF2FF" stroke="#4338CA" strokeWidth="1.2" opacity="0.8"/>
+      <rect x="171" y="72" width="42" height="2.5" rx="1.25" fill="#4338CA" opacity="0.5"/>
+      <line x1="161" y1="50" x2="176" y2="64" stroke="#4338CA" strokeWidth="1" strokeLinecap="round" opacity="0.45"/>
+      <line x1="207" y1="50" x2="200" y2="64" stroke="#4338CA" strokeWidth="1" strokeLinecap="round" opacity="0.45"/>
+      <rect x="165" y="100" width="54" height="16" rx="3" fill="#EEF2FF" stroke="#4338CA" strokeWidth="1" opacity="0.6"/>
+      <rect x="171" y="106" width="38" height="2" rx="1" fill="#4338CA" opacity="0.35"/>
+      <line x1="192" y1="86" x2="192" y2="100" stroke="#4338CA" strokeWidth="1" strokeLinecap="round" opacity="0.45"/>
+    </svg>
+  );
+}
+
+function VsdxTranslatorThumb({ className }: ThumbProps) {
+  return (
+    <svg viewBox="0 0 280 140" fill="none" xmlns="http://www.w3.org/2000/svg" className={className}>
+      {/* Source VSDX document */}
+      <rect x="14" y="24" width="74" height="92" rx="4" fill="white" stroke="#7C3AED" strokeWidth="1.2" opacity="0.7"/>
+      <rect x="14" y="24" width="74" height="12" rx="4" fill="#7C3AED" opacity="0.1"/>
+      {/* Text lines with grouping bracket */}
+      <rect x="22" y="46" width="58" height="2.5" rx="1.25" fill="#4C1D95" opacity="0.4"/>
+      <rect x="22" y="54" width="50" height="2.5" rx="1.25" fill="#4C1D95" opacity="0.4"/>
+      <rect x="22" y="62" width="54" height="2.5" rx="1.25" fill="#4C1D95" opacity="0.4"/>
+      <path d="M82 44 L88 44 L88 66 L82 66" stroke="#7C3AED" strokeWidth="1.5" fill="none" strokeLinecap="round" strokeLinejoin="round" opacity="0.55"/>
+      <rect x="22" y="74" width="58" height="2" rx="1" fill="#4C1D95" opacity="0.25"/>
+      <rect x="22" y="82" width="44" height="2" rx="1" fill="#4C1D95" opacity="0.25"/>
+      <rect x="22" y="90" width="52" height="2" rx="1" fill="#4C1D95" opacity="0.25"/>
+      <path d="M82 72 L88 72 L88 94 L82 94" stroke="#7C3AED" strokeWidth="1.5" fill="none" strokeLinecap="round" strokeLinejoin="round" opacity="0.35"/>
+      {/* Batch box + arrow */}
+      <rect x="92" y="58" width="22" height="26" rx="4" fill="#EDE9FE" stroke="#7C3AED" strokeWidth="1" opacity="0.75"/>
+      <rect x="97" y="65" width="12" height="2" rx="1" fill="#7C3AED" opacity="0.5"/>
+      <rect x="97" y="71" width="9" height="2" rx="1" fill="#7C3AED" opacity="0.35"/>
+      <path d="M116 71 L130 71" stroke="#7C3AED" strokeWidth="1.5" strokeLinecap="round"/>
+      <path d="M126 67 L130 71 L126 75" stroke="#7C3AED" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+      {/* Three translated output docs */}
+      <rect x="134" y="16" width="64" height="76" rx="4" fill="white" stroke="#7C3AED" strokeWidth="1.2" opacity="0.85"/>
+      <rect x="134" y="16" width="64" height="10" rx="4" fill="#7C3AED" opacity="0.12"/>
+      <rect x="141" y="34" width="50" height="2" rx="1" fill="#4C1D95" opacity="0.35"/>
+      <rect x="141" y="42" width="42" height="2" rx="1" fill="#4C1D95" opacity="0.35"/>
+      <rect x="141" y="50" width="48" height="2" rx="1" fill="#4C1D95" opacity="0.35"/>
+      <rect x="141" y="58" width="34" height="2" rx="1" fill="#4C1D95" opacity="0.35"/>
+      <rect x="141" y="76" width="22" height="7" rx="3" fill="#7C3AED" opacity="0.15"/>
+      <rect x="143" y="79" width="18" height="1.5" rx="0.75" fill="#7C3AED" opacity="0.4"/>
+      <rect x="202" y="22" width="64" height="72" rx="4" fill="white" stroke="#7C3AED" strokeWidth="1.2" opacity="0.6"/>
+      <rect x="202" y="22" width="64" height="10" rx="4" fill="#7C3AED" opacity="0.08"/>
+      <rect x="209" y="40" width="50" height="2" rx="1" fill="#4C1D95" opacity="0.25"/>
+      <rect x="209" y="48" width="40" height="2" rx="1" fill="#4C1D95" opacity="0.25"/>
+      <rect x="209" y="56" width="46" height="2" rx="1" fill="#4C1D95" opacity="0.25"/>
+      <rect x="209" y="80" width="22" height="7" rx="3" fill="#7C3AED" opacity="0.1"/>
+      <rect x="208" y="106" width="64" height="24" rx="4" fill="white" stroke="#7C3AED" strokeWidth="1" opacity="0.4"/>
+      <rect x="215" y="112" width="42" height="2" rx="1" fill="#4C1D95" opacity="0.2"/>
+      <rect x="215" y="119" width="34" height="2" rx="1" fill="#4C1D95" opacity="0.15"/>
     </svg>
   );
 }
@@ -402,7 +452,8 @@ const thumbnails: Record<string, (props: ThumbProps) => React.ReactElement> = {
   journaling: JournalingThumb,
   "cyclic-life": CyclicLifeThumb,
   "friend-crm": FriendCrmThumb,
-  "vsdx-processor": VsdxProcessorThumb,
+  "vsdx-transformer": VsdxTransformerThumb,
+  "vsdx-translator": VsdxTranslatorThumb,
   "slack-kb-bot": SlackKbBotThumb,
   "todoist-ai": TodoistAiThumb,
   "ai-chat-app": AiChatAppThumb,
