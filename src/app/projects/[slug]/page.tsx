@@ -62,6 +62,16 @@ export default async function ProjectPage({
           >
             {statusConfig[project.status].label}
           </span>
+          {project.links.live && (
+            <a
+              href={project.links.live}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={`text-xs font-medium px-2.5 py-1 rounded-full border ${project.accent.border} ${project.accent.text} hover:${project.accent.bg} transition-colors`}
+            >
+              Live Site →
+            </a>
+          )}
         </div>
         <h1 className="font-serif text-4xl md:text-5xl text-white leading-tight mb-4">
           {project.name}
