@@ -452,9 +452,11 @@ The whole thing runs locally on SQLite, stored in iCloud Drive — which means i
       dot: "bg-blue-500",
       cardBg: "bg-blue-950",
     },
-    description: `Most people learn to argue. They learn to push back, defend their position, not back down. Productive disagreement — where both sides come away having actually thought — is a different skill, and almost nobody teaches it explicitly.
+    description: `It's striking how often a trivial thing — a badly phrased sentence, a misread tone — turns into an argument that leaves both people worse off than before. And how often a real disagreement, one that actually matters, ends with more damage than insight. People fight to win instead of to understand, and everybody loses.
 
-I built this as an interactive guided module on the Clearer Thinking platform. It walks participants through frameworks for disagreeing well: the techniques that make an argument constructive rather than corrosive, and that keep relationships intact through difficult conversations. The module ends with live practice — a conversation with an AI on a controversial topic, applying the techniques just learned.`,
+Productive disagreement is the alternative: treating a conflict as a problem to solve together rather than a battle to win. It's a learnable skill, and it changes outcomes — in relationships, in work, in any situation where two people need to reach something better than where they started.
+
+I built this as an interactive guided module on the Clearer Thinking platform. It teaches the techniques behind disagreeing well, and ends with live AI practice — applying the frameworks in a real conversation before it counts.`,
     features: [
       "Interactive guided module: structured learning path through productive disagreement frameworks",
       "Live AI practice at the end — apply the techniques in a real conversation on a controversial topic",
