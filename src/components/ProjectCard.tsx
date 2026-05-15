@@ -31,7 +31,7 @@ export function ProjectCard({ project, hideBadge = false }: ProjectCardProps) {
       className="group block rounded-xl overflow-hidden border border-zinc-800 bg-zinc-900 hover:border-zinc-700 hover:bg-zinc-800/60 transition-all duration-200"
     >
       {/* GIF Thumbnail */}
-      <div className="relative h-44 w-full overflow-hidden bg-zinc-950">
+      <div className="relative w-full aspect-video overflow-hidden bg-zinc-950">
         {project.gif ? (
           <img
             src={project.gif}
