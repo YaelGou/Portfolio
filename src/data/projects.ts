@@ -444,6 +444,7 @@ The whole thing runs locally on SQLite, stored in iCloud Drive — which means i
     name: "Productive Disagreement Tool",
     tagline: "An interactive module teaching the techniques behind constructive, relationship-positive arguments.",
     status: "active",
+    gif: "https://media.giphy.com/media/FLze1pgnsmBMs/giphy.gif",
     accent: {
       border: "border-blue-500",
       bg: "bg-blue-900/30",
