@@ -186,7 +186,7 @@ The result is a journaling practice that feels coherent: every day connects to e
     name: "Friend Reconnection CRM",
     tagline: "A personal CLI that keeps your most important friendships from quietly fading.",
     status: "active",
-    gif: "https://media.giphy.com/media/309gFKfRr2o52spjHO/giphy.gif",
+    gif: "https://media.giphy.com/media/3o72EVymX8u70s22mQ/giphy.gif",
     accent: {
       border: "border-slate-500",
       bg: "bg-slate-800/50",
