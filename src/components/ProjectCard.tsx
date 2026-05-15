@@ -4,6 +4,7 @@ import { SkillPill } from "./SkillPill";
 
 interface ProjectCardProps {
   project: Project;
+  hideBadge?: boolean;
 }
 
 const statusConfig: Record<Project["status"], { label: string; classes: string }> = {
@@ -21,7 +22,7 @@ const statusConfig: Record<Project["status"], { label: string; classes: string }
   },
 };
 
-export function ProjectCard({ project }: ProjectCardProps) {
+export function ProjectCard({ project, hideBadge = false }: ProjectCardProps) {
   const status = statusConfig[project.status];
 
   return (
@@ -51,9 +52,11 @@ export function ProjectCard({ project }: ProjectCardProps) {
           <h3 className="font-serif text-lg font-semibold text-white leading-snug group-hover:text-zinc-200 transition-colors">
             {project.name}
           </h3>
-          <span className={`shrink-0 text-xs px-2 py-0.5 rounded-full font-medium ${status.classes}`}>
-            {status.label}
-          </span>
+          {!hideBadge && (
+            <span className={`shrink-0 text-xs px-2 py-0.5 rounded-full font-medium ${status.classes}`}>
+              {status.label}
+            </span>
+          )}
         </div>
         <p className="text-sm text-zinc-400 leading-relaxed mb-4 line-clamp-2">
           {project.tagline}
