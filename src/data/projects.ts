@@ -17,18 +17,17 @@ export const projects: Project[] = [
       dot: "bg-violet-500",
       cardBg: "bg-violet-950",
     },
-    description: `I love karaoke, and have so many songs in my songlist — but while listening to others I could never figure out what I would want to sing that would fit my mood. I tried Spotify, tried simple notes, but could never find the right song in the right moment.
+    description: `I love karaoke, and have so many songs in my list — but while listening to others it's so hard to figure out what to sing that would fit the mood. It's not just me, I checked. I tried Spotify, tried simple notes, but could never find the right song in the right moment.
 
-I built Karaoke Brain as a mood-organized song management system. You define your own moods with custom names and accent colors, curate your songs into each, and at karaoke night you pick the vibe you're in and get your options instantly. No scrolling through hundreds of songs looking for the one that fits.
+I built Karaoke Brain as a mood-organized song management system. You define your own moods, curate your songs into each, and at karaoke night you pick the vibe you're in and get your options instantly. No scrolling through hundreds of songs. And when inspiration fails, you can ask an AI to suggest something based on your mood — using your own API key so there's no shared cost or privacy concern.
 
-The app also solves a practical karaoke problem: before you go up and request a song, it checks whether it's actually in the venue's database. And when inspiration fails, you can ask an AI to suggest something based on your mood — using your own API key so there's no shared cost or privacy concern.`,
+One more problem this solves: you don't need to read the songbook anymore. The app checks whether the song is in the venue's database before you go up.`,
     features: [
-      "Mood grid: define custom moods with names and accent colors, organize songs into each",
-      "Karaoke database check: verifies song availability before you request it at the bar",
-      "AI song suggestions from Claude, OpenAI, or Gemini — you provide the API key",
-      "Spotify OAuth import: pull songs directly from your playlists instead of adding manually",
-      "Local data persistence: your songs and moods are stored on-device, no account required",
-      "Responsive PWA with mood-based glowing color themes",
+      "Mood-organized library: define moods, curate songs into each, see your options the moment you need them",
+      "Venue database check: confirms the song is in the bar's catalog before you walk up to request it",
+      "AI suggestions on demand — Claude, OpenAI, or Gemini — using your own key, no shared cost",
+      "Spotify import: pull songs directly from your playlists rather than building from scratch",
+      "Fully local: your library stays on-device, no account or sign-in required",
     ],
     techStack: [
       { name: "Next.js 15 + TypeScript", reason: "App Router with fast page transitions; TypeScript for type-safe mood and song data structures" },
@@ -63,18 +62,17 @@ The app also solves a practical karaoke problem: before you go up and request a 
       dot: "bg-teal-500",
       cardBg: "bg-teal-950",
     },
-    description: `Working on retention analytics for an edtech program, I needed a way to synthesize subscriber engagement signals — behavioral data, usage patterns, churn indicators — into something actionable for program founders. The challenge wasn't data collection; it was sense-making at scale. Founders needed to see not just metrics, but narratives about what was happening with their subscribers, and clear guidance on what to do about it.
+    description: `A subscription platform invests most of its energy in acquisition. But retention matters too — a churning subscriber is expensive, and the signals are already in the data: engagement patterns, email behavior, usage drops.
 
-I built this as a single-file, browser-based tool that can receive retention data and immediately produce structured insights. No backend, no deployment pipeline, no onboarding friction. A founder opens the file, the AI agent drops in the data, and within seconds they have a weekly brief with clustered themes, behavioral archetypes, churn risk scores, and intervention recommendations in their own voice — not generic dashboard language.
+This platform had an internal AI generating rich behavioral data on subscribers. The missing piece was turning that data into something a person could act on — not another dashboard to log into, but a brief that surfaces what's changing and what to do about it, delivered to whoever needs it.
 
-The design constraint that shaped everything: it had to work for non-technical founders who wouldn't install anything. A single HTML file they could open in any browser.`,
+I built the tool to close that loop: it synthesizes subscriber signals, clusters them into themes, scores churn risk, and generates a weekly brief with plain-language intervention recommendations. Zero infrastructure — a single HTML file that opens in any browser.`,
     features: [
-      "Subscriber archetype filtering: segments users by behavioral profile for targeted analysis",
-      "Churn risk scoring with AI-generated explanations in plain language",
-      "Theme clustering: groups related signals into actionable patterns across hundreds of subscribers",
-      "Intervention recommendations in multiple tone styles (direct, empathetic, strategic)",
-      "Weekly founder brief generation: a narrative summary ready to act on",
-      "Zero infrastructure: runs entirely in the browser, no backend or deployment needed",
+      "Weekly brief generation: subscriber signals turned into a narrative summary ready to act on",
+      "Theme clustering: groups related behavioral patterns across hundreds of subscribers automatically",
+      "Churn risk scoring with plain-language explanations — no data interpretation required",
+      "Intervention recommendations with multiple tone options",
+      "Zero infrastructure: a single HTML file, opens in any browser, no installation needed",
     ],
     techStack: [
       { name: "Vanilla HTML/CSS/JS", reason: "No build step — the tool opens in any browser without Node.js, npm, or technical setup" },
@@ -108,11 +106,11 @@ The design constraint that shaped everything: it had to work for non-technical f
       dot: "bg-rose-500",
       cardBg: "bg-rose-950",
     },
-    description: `Any relationship has conflicts — and the more people are involved, the more complex it gets. I've studied Nonviolent Communication (NVC) and find it genuinely useful — but in the heat of conflict, it's hard to hold the framework in mind while also feeling the feelings.
+    description: `Any relationship has recurring conflicts — arguments that come back in slightly different shapes. The hard part isn't dealing with them one by one; it's noticing the pattern. Is this a one-off, or is it the third time this month? NVC (Nonviolent Communication) is a framework I find genuinely useful for this, but in the heat of conflict it's hard to hold the structure in mind while also feeling the feelings.
 
-I built Conflict Soup to create a space for structured conflict processing outside the moment of conflict itself. The idea is that you log incidents when they happen — messy and emotionally raw — and the system immediately offers an NVC rewrite: the same situation described in terms of observations, feelings, needs, and requests. Over time, patterns emerge across incidents. Issues cluster. The tool helps you see which themes keep appearing.
+Conflict Soup creates a space for processing outside the moment. You log incidents as they happen — messy, raw — and the system immediately offers an NVC rewrite: the same situation in terms of observations, feelings, needs, and requests. Over time, themes cluster. You can see what keeps coming up.
 
-When it's time to actually address something, the app facilitates a structured resolution session: a focused conversation about a specific issue that ends with a concrete, mutual agreement on record. The goal isn't to eliminate conflict — it's to make conflict a place where relationships can grow instead of erode.`,
+When it's time to address something, the app facilitates a structured resolution session that ends with a concrete, mutual agreement on record.`,
     features: [
       "Relationship units: create dyads, triads, or multi-person groups with named members",
       "Incident tracking with immutable original text — the raw account is always preserved",
@@ -197,11 +195,9 @@ The result is a journaling practice that feels coherent: every day connects to e
       dot: "bg-slate-500",
       cardBg: "bg-slate-900",
     },
-    description: `I noticed a pattern: I care about maintaining friendships, but the busyness of daily life means weeks become months before I reach out to people I genuinely want to stay close with. Most CRM tools are built for sales pipelines — they're overkill for friendship and miss the point entirely.
+    description: `I care about maintaining friendships, but the busyness of daily life means weeks become months before I reach out to people I genuinely want to stay close with. Most CRM tools are built for sales pipelines — they're overkill for friendship and miss the point entirely.
 
-I wanted something minimal: a lightweight CLI I could run from the terminal, see who I'm overdue to contact, and come away with a message I'd actually want to send. Not a template, not a notification — a real message, grounded in what's currently happening in my life and what I know about each friend.
-
-The tool stores data in Excel so I can open and edit it directly without the CLI, and the AI generates messages that are warm and specific rather than generic check-ins.`,
+I wanted something minimal: a CLI I could run from the terminal, see who I'm overdue to contact, and come away with a message I'd actually want to send. Not a template — a real message, grounded in what's currently happening in my life and what I know about each friend.`,
     features: [
       "Track friends with custom contact frequencies (weekly, monthly, quarterly, and more)",
       "Shows who you're overdue to contact and by how long",
@@ -240,15 +236,14 @@ The tool stores data in Excel so I can open and edit it directly without the CLI
       dot: "bg-indigo-500",
       cardBg: "bg-indigo-950",
     },
-    description: `Teams that run workshops often end up with whiteboards full of process diagrams that need to live in Visio. The options are to redraw everything manually, or photograph the board and hope someone has time to reconstruct it. Neither is good.
+    description: `After facilitating a workshop, I often end up with boards full of cards and hand-written notes that all need to live digitally — in my case in Lucidchart. Recreating them manually is the kind of job that shouldn't need to exist.
 
-The tool converts images (JPEG/PNG) one has after the Workshop into actual editable .vsdx files. GPT-4o runs a three-pass vision pipeline — detecting shapes, extracting text, finding connectors — then maps percentage-based positions to VSDX coordinate space and assembles a final file using your actual template shapes. No redrawing, no Visio license required.`,
+The tool converts workshop photos into actual editable .vsdx files. GPT-4o's vision processes the image — detecting shapes, reading text, finding connections — and assembles a structured file using your template shapes, positioned correctly. No redrawing, no manual reconstruction.`,
     features: [
-      "Convert JPEG/PNG diagrams to editable .vsdx files — no manual redrawing",
-      "Three-pass AI vision pipeline: shape detection → text extraction → connector mapping",
-      "Matches detected shapes to a user-provided template catalog with position mapping",
-      "Percentage-based position mapping to VSDX coordinate space",
-      "Operates directly on VSDX internals (ZIP + XML) — no GUI or Visio license required",
+      "Convert workshop photos directly to editable .vsdx files — skip the manual reconstruction entirely",
+      "AI vision reads shapes, text, and connections from the image",
+      "Positions shapes using your actual template catalog, not generic placeholders",
+      "Operates on VSDX internals directly — no Visio license required",
     ],
     techStack: [
       { name: "JavaScript (Node.js)", reason: "Fast scripting environment for file I/O pipelines, ZIP manipulation, and XML processing" },
@@ -270,7 +265,7 @@ The tool converts images (JPEG/PNG) one has after the Workshop into actual edita
   {
     slug: "vsdx-translator",
     name: "Diagram Translator",
-    tagline: "Translates entire Visio diagram libraries into 6+ languages — 85–95% fewer API calls.",
+    tagline: "Batch-translates entire Visio diagram libraries into 6+ languages without the monkey work.",
     status: "active",
     gif: "https://media.giphy.com/media/3o6vXLMQP2SQluZHgs/giphy.gif",
     accent: {
@@ -281,18 +276,14 @@ The tool converts images (JPEG/PNG) one has after the Workshop into actual edita
       dot: "bg-purple-500",
       cardBg: "bg-purple-950",
     },
-    description: `Translating a large diagram library into 6+ languages sounds simple until you're doing it: open each file, find every text shape, translate it, repeat. One API call per shape means thousands of calls. The work is entirely mechanical, and the cost adds up fast.
+    description: `Translating a large diagram library into a different language is the monkey job no-one wants to do: open each file, find every text shape, copy-paste, translate it, repeat. The work is entirely mechanical, and the cost adds up fast.
 
-The tool batch-translates existing .vsdx files by grouping all text per page and sending it in a single call, then writing the translations back into the correct XML nodes in the VSDX structure. That reduces API calls by 85–95% compared to shape-by-shape translation. GPT-4o-mini handles high-throughput batches at lower cost; GPT-4o is available where quality matters more.
-
-Both the grouping and the reassembly operate directly on the ZIP/XML internals of the VSDX format — no GUI, no Visio license required.`,
+The tool batch-translates existing .vsdx files by grouping all text per page and sending it in a single call, then writing the translations back into the correct XML nodes in the VSDX structure. That reduces API calls by 85–95% compared to shape-by-shape translation and leaves not only your brain but also your hands free for other work.`,
     features: [
-      "Translate existing .vsdx diagrams into 6+ languages",
-      "Batch translation groups all text per page — 85–95% fewer API calls than shape-by-shape",
-      "GPT-4o-mini for cost-efficient batch translation; GPT-4o for quality-critical content",
-      "Writes translations back into the correct XML nodes in the VSDX structure",
-      "Processes entire diagram libraries in one run",
-      "Operates directly on VSDX internals (ZIP + XML) — no GUI or Visio license required",
+      "Translate entire diagram libraries in one run — no file-by-file work",
+      "Batch translation: all text per page in a single API call, 85–95% fewer calls than shape-by-shape",
+      "Writes translations back into the correct positions in the VSDX structure",
+      "No Visio license required — operates on the file internals directly",
     ],
     techStack: [
       { name: "JavaScript (Node.js)", reason: "Fast scripting environment for file I/O pipelines, ZIP manipulation, and XML processing" },
@@ -372,18 +363,17 @@ The bot is deployed and running on Fly.io in production. Team members add cases 
       dot: "bg-red-500",
       cardBg: "bg-red-950",
     },
-    description: `I use Todoist heavily, but the friction of opening the app, navigating to the right project, setting priorities, and scheduling correctly adds up throughout the day. I'd rather just type what I mean and have the system handle the details.
+    description: `I use Todoist heavily, but the friction of opening the app, navigating to the right project, setting priorities, and scheduling correctly adds up. I'd rather just type what I mean and have the system handle the details.
 
-I built a conversational CLI that wraps the Todoist API with a Gemini-powered natural language layer. You type what you want — "add a call with Yoav next Thursday morning, high priority" — and it creates the task with the right properties. I added a custom priority shorthand that maps to my own workflow: 'i:' for internal work, 's:' for self-development, no prefix for client work (always highest priority).
+I built a conversational CLI that wraps the Todoist API with a Gemini-powered natural language layer. You type what you want — "add a call with Yoav next Thursday morning, high priority" — and it creates the task with the right properties.
 
-Two features I find especially useful: templates and calendar photo input. When you type something like "I have an Adboard on 15.04," the tool recognizes the event type, applies a template that breaks it into standard milestones and deadlines, and asks for confirmation before adding everything. The image input works differently from what you might expect — you photograph your physical calendar or planner, and the tool reads it and creates Todoist tasks for everything already scheduled there, slotting them into the right dates.`,
+Two features stand out: event templates and calendar photo input. Type "I have an Adboard on 15.04" and the tool breaks it into standard milestones and deadlines, asks for confirmation, and adds everything at once. The photo input is unexpected: photograph your physical planner or calendar and the tool reads it and creates Todoist tasks for everything scheduled there, into the right dates.`,
     features: [
-      "Create, search, update, and complete tasks in natural language — free text, no voice",
-      "Custom priority shorthand: 'i:' internal, 's:' self-work, no prefix = client (highest)",
-      "Event templates: type 'I have an Adboard on 15.04' and get a full set of milestones and deadlines, confirmed before adding",
-      "Calendar photo input: photograph your physical planner and the tool inserts all existing events and plans into Todoist",
+      "Full task management in natural language — create, search, update, complete, schedule",
+      "Event templates: describe an event and get a full set of milestones and deadlines in one shot",
+      "Calendar photo input: photograph your physical planner and the tool populates Todoist from the image",
       "Recurring task scheduling in natural language ('every weekday', 'first Monday of the month')",
-      "Conversational context: remembers what you've discussed in a session for follow-ups",
+      "Conversational context: follow-up commands work within the same session",
     ],
     techStack: [
       { name: "JavaScript (Node.js)", reason: "Fast CLI scripting — no build step, runs immediately from the terminal" },
@@ -417,20 +407,18 @@ Two features I find especially useful: templates and calendar photo input. When 
       dot: "bg-green-500",
       cardBg: "bg-green-950",
     },
-    description: `Every bank lets you export a CSV. Nobody actually analyzes them, because turning raw transaction data into useful insight requires a lot of work — categorizing, deduplicating, identifying recurring charges, and comparing trends over time. Cloud tools do this but at the cost of handing over your complete financial history to a third party.
+    description: `The existing personal finance apps have two problems: they share your complete financial history with third parties you don't know, and they expect you to remember to log every expense as it happens. Neither works.
 
-I built a fully local alternative. The dashboard runs on your machine, stores data in SQLite on iCloud Drive (so it syncs to iPhone without any server), and never sends anything anywhere. You drop in a CSV export from your bank or PayPal, and the importer auto-detects the format — European or US date styles, comma or semicolon delimiters, PayPal's specific schema — and categorizes everything automatically using a rule-based engine you can tune with your own keywords.
+The approach here is different: your expenses already live in your bank statements. Import the CSV, and the dashboard categorizes everything automatically. No manual logging, no sensitive data leaving your machine.
 
-The insights layer goes beyond charts: it identifies recurring charges, computes a monthly breakdown versus the previous month, tracks savings goals, and generates a weekly summary with an honest verdict on your spending patterns.`,
+The whole thing runs locally on SQLite, stored in iCloud Drive — which means it syncs to iPhone without any server or account. Open the PWA on your phone and your full spending analysis is there.`,
     features: [
-      "Auto-detects bank CSV format: EU/US date styles, comma/semicolon delimiters, PayPal schema",
-      "Rule-based categorizer with 10 categories + custom work keyword matching",
-      "Recurring transaction detection across months",
-      "Weekly summary with plain-language 'honest verdict' on spending patterns",
-      "Monthly breakdown with vs-last-month comparisons",
-      "Savings goals tracking",
-      "PWA: installable on iPhone via Safari, accessible over local WiFi",
-      "Zero cloud dependency — SQLite in iCloud Drive for sync, nothing leaves the machine",
+      "Bank CSV import with automatic categorization — no manual entry, no syncing with your bank",
+      "Recurring charge detection: identifies subscriptions and regular payments across months",
+      "Weekly summary with an honest plain-language verdict on your spending patterns",
+      "Monthly breakdown with vs-last-month comparisons and savings goal tracking",
+      "Syncs to iPhone via iCloud Drive — no server, no account, no app store",
+      "Zero cloud dependency: nothing leaves your machine",
     ],
     techStack: [
       { name: "Python + FastAPI", reason: "Lightweight local server with clean REST endpoints — no deployment complexity, runs instantly" },
@@ -467,18 +455,17 @@ The insights layer goes beyond charts: it identifies recurring charges, computes
       dot: "bg-pink-500",
       cardBg: "bg-pink-950",
     },
-    description: `Cycle tracking apps tend to fall into two camps: the ones designed around fertility and medical outcomes, and the ones so minimal they're just a period calendar. I wanted something different — a highly customizable daily logging tool built around the idea that every cycle is unique and worth understanding in detail.
+    description: `I wanted a tool that lets me see patterns I might have missed. I know well enough when my head will hurt — what I want to understand is why on some weeks talking to people is so much harder, or why the same task feels light one day and impossible the next.
 
-The design is icon-based: big, satisfying icons to tap, no free-text walls, clean structured input. Everything is customizable. You define the categories, the tracking items, and what kind of input each uses — binary yes/no, intensity 1-5, single choice, multi-select, numeric, count, or duration. Sleep quality, mood shifts, energy patterns, specific habits — whatever matters in your cycle, you can track it.
+Cyclic Life is a fully customizable daily logging tool. You define what you track and how — the app stays out of the way and just collects. Over time, patterns surface across your cycle that a calendar simply can't show you.
 
-Privacy comes first by design. All data lives on-device in SQLite by default. No account required, no cloud, nothing leaves your phone unless you choose to sync. When you want a second lens on your patterns, optional AI observations are available — using your own API key or a custom-compatible endpoint.`,
+All data lives on-device by default. No account, no cloud, nothing leaves your phone.`,
     features: [
-      "Fully customizable tracking items: define categories, items, and input types to match your life",
-      "Six input types: binary, intensity 1–5, single choice, multi-select, numeric, count, duration",
-      "Period tracking with cycle phase estimates (follicular, ovulatory, luteal) with confidence labels",
-      "Offline-first SQLite storage — data stays on-device, no account or cloud required",
-      "Deterministic analytics first: pattern detection before any AI layer",
-      "AI observations with user-provided API key or custom OpenAI-compatible endpoint",
+      "Fully customizable tracking: you define the categories, items, and input types — not locked to someone else's idea of what matters",
+      "Pattern analytics across your cycle — surfaces correlations you wouldn't have noticed otherwise",
+      "Period tracking with cycle phase estimates and confidence labels",
+      "Offline-first: all data on-device, no account or cloud required",
+      "Optional AI observations using your own key — your health data stays yours",
     ],
     techStack: [
       { name: "Expo + React Native + TypeScript", reason: "Single codebase for iOS and Android; TypeScript ensures correctness in cycle phase calculations" },
