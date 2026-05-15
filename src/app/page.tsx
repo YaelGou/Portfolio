@@ -15,7 +15,7 @@ const professionalSlugs = [
   "vsdx-translator",
   "slack-kb-bot",
   "todoist-ai",
-  "finance-dashboard",
+  "clearer-thinking",
 ];
 
 const personalSlugs = [
@@ -24,6 +24,7 @@ const personalSlugs = [
   "journaling",
   "friend-crm",
   "cyclic-life",
+  "finance-dashboard",
 ];
 
 export default function Home() {

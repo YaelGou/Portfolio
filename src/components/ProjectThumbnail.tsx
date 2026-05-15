@@ -477,6 +477,36 @@ function FinanceDashboardThumb({ className }: ThumbProps) {
   );
 }
 
+function ClearerThinkingThumb({ className }: ThumbProps) {
+  return (
+    <svg viewBox="0 0 280 140" fill="none" xmlns="http://www.w3.org/2000/svg" className={className}>
+      {/* Left speech bubble */}
+      <rect x="14" y="18" width="100" height="54" rx="8" fill="white" stroke="#1D4ED8" strokeWidth="1.5" opacity="0.65"/>
+      <path d="M24 72 L14 86 L38 72" fill="white" stroke="#1D4ED8" strokeWidth="1.5" strokeLinejoin="round"/>
+      <rect x="26" y="32" width="76" height="2.5" rx="1.25" fill="#1E3A8A" opacity="0.45"/>
+      <rect x="26" y="41" width="62" height="2.5" rx="1.25" fill="#1E3A8A" opacity="0.3"/>
+      <rect x="26" y="50" width="70" height="2.5" rx="1.25" fill="#1E3A8A" opacity="0.3"/>
+      {/* Right speech bubble */}
+      <rect x="166" y="18" width="100" height="54" rx="8" fill="white" stroke="#1D4ED8" strokeWidth="1.5" opacity="0.45"/>
+      <path d="M256 72 L266 86 L242 72" fill="white" stroke="#1D4ED8" strokeWidth="1.5" strokeLinejoin="round"/>
+      <rect x="178" y="32" width="76" height="2.5" rx="1.25" fill="#1E3A8A" opacity="0.35"/>
+      <rect x="178" y="41" width="58" height="2.5" rx="1.25" fill="#1E3A8A" opacity="0.22"/>
+      <rect x="178" y="50" width="66" height="2.5" rx="1.25" fill="#1E3A8A" opacity="0.22"/>
+      {/* Center framework box */}
+      <rect x="122" y="28" width="36" height="46" rx="5" fill="#DBEAFE" stroke="#1D4ED8" strokeWidth="1.2" opacity="0.8"/>
+      <rect x="129" y="37" width="22" height="2" rx="1" fill="#1D4ED8" opacity="0.55"/>
+      <rect x="129" y="44" width="20" height="2" rx="1" fill="#1D4ED8" opacity="0.45"/>
+      <rect x="129" y="51" width="22" height="2" rx="1" fill="#1D4ED8" opacity="0.35"/>
+      <rect x="129" y="58" width="18" height="2" rx="1" fill="#1D4ED8" opacity="0.28"/>
+      {/* AI practice indicator */}
+      <rect x="98" y="96" width="84" height="24" rx="6" fill="#DBEAFE" stroke="#1D4ED8" strokeWidth="1" opacity="0.6"/>
+      <path d="M140 102 L142 107 L147 108.5 L142 110 L140 115 L138 110 L133 108.5 L138 107 Z" fill="#1D4ED8" opacity="0.45"/>
+      <rect x="154" y="105" width="20" height="2" rx="1" fill="#1D4ED8" opacity="0.4"/>
+      <rect x="154" y="111" width="14" height="2" rx="1" fill="#1D4ED8" opacity="0.28"/>
+    </svg>
+  );
+}
+
 // Placeholder for projects not yet added
 function DefaultThumb({ className }: ThumbProps) {
   return (
@@ -490,6 +520,7 @@ function DefaultThumb({ className }: ThumbProps) {
 }
 
 const thumbnails: Record<string, (props: ThumbProps) => React.ReactElement> = {
+  "clearer-thinking": ClearerThinkingThumb,
   studyquiz: StudyquizThumb,
   "retreat-architect": RetreatArchitectThumb,
   "conflict-soup": ConflictSoupThumb,

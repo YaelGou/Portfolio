@@ -439,6 +439,42 @@ The whole thing runs locally on SQLite, stored in iCloud Drive — which means i
     cardSkills: ["Python", "FastAPI", "SQLite"],
   },
 
+  {
+    slug: "clearer-thinking",
+    name: "Productive Disagreement Tool",
+    tagline: "An interactive module teaching the techniques behind constructive, relationship-positive arguments.",
+    status: "active",
+    accent: {
+      border: "border-blue-500",
+      bg: "bg-blue-900/30",
+      text: "text-blue-300",
+      badge: "bg-blue-900/40 text-blue-300",
+      dot: "bg-blue-500",
+      cardBg: "bg-blue-950",
+    },
+    description: `Most people learn to argue. They learn to push back, defend their position, not back down. Productive disagreement — where both sides come away having actually thought — is a different skill, and almost nobody teaches it explicitly.
+
+I built this as an interactive guided module on the Clearer Thinking platform. It walks participants through frameworks for disagreeing well: the techniques that make an argument constructive rather than corrosive, and that keep relationships intact through difficult conversations. The module ends with live practice — a conversation with an AI on a controversial topic, applying the techniques just learned.`,
+    features: [
+      "Interactive guided module: structured learning path through productive disagreement frameworks",
+      "Live AI practice at the end — apply the techniques in a real conversation on a controversial topic",
+      "Publicly accessible — no signup, opens in any browser",
+    ],
+    techStack: [
+      { name: "Clearer Thinking platform", reason: "Guided track format enables rich, interactive educational modules without custom development — focus stays on pedagogical design" },
+      { name: "ChatGPT (OpenAI)", reason: "AI conversation partner for end-of-module practice — lets participants apply frameworks in a low-stakes live exchange" },
+    ],
+    skills: [
+      "Interactive curriculum design",
+      "Pedagogical sequencing for behavior and mindset change",
+      "AI-assisted experiential learning design",
+      "Evidence-based frameworks for conflict communication",
+    ],
+    links: { live: "https://programs.clearerthinking.org/productive_disagreement.html" },
+    progress: "Complete and publicly available on the Clearer Thinking platform.",
+    cardSkills: ["Clearer Thinking", "Guided Track", "ChatGPT"],
+  },
+
   // ── In Progress (featured first) ──────────────────────────────────────────
 
   {
